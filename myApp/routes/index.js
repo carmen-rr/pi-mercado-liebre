@@ -1,17 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-router.get ('/search', function(req,res) {
-  return res.render('search-results')
-} )
+const indexController = require('../controllers/indexController')  //VINCULANDO ROUTES DE INDEX CON CONTROLLER INDEXCONTROLLER
+ 
 
-router.get('/login', function (req,res){
-  return res.render('login')
-})
+router.get ('/search', indexController.search); 
 
-router.get('/register', function (req,res){
-  return res.render('register')
-})
+router.get('/login', indexController.login); 
+
+router.get('/register', indexController.register); 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

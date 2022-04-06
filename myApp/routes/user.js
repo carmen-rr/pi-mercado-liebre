@@ -1,15 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-const userController = require('../controllers/userController');
+const userController = require('../controllers/userController'); //VINCULANDO ROUTES DE USER CON CONTROLLER USERCONTROLLER
 
-router.get('/profile', function(req,res){
-  return res.render('profile')
-}) 
 
-router.get('/profile/edit', function(req,res){
-  return res.render('profile-edit')
-})
+router.get('/profile', userController.profile); 
+
+router.get('/profile/edit', userController.profileEdit); 
 
 
 /* GET users listing. */
