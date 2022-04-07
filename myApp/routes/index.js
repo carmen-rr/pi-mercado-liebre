@@ -11,9 +11,7 @@ router.get('/login', indexController.login);
 router.get('/register', indexController.register); 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  return res.render('index', { title: 'Express' });
-});
+router.get('/', indexController.index);
 
 module.exports = router;
 
