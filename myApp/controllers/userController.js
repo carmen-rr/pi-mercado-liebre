@@ -1,8 +1,12 @@
+const db = require("../db/data");
+
 const userController = { 
 
     //RUTA DE PROFILE 
     profile: function(req,res){
-        return res.render('profile')
+        let nombreUsuario = db.usuario.usuario
+        return res.render('profile', { 
+          nombre: nombreUsuario })
       }, 
 
     //RUTA DE PROFILE-EDIT  
