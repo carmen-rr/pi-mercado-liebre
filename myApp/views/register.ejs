@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="stylesheets/app.css">
+	<link rel="stylesheet" href="stylesheets/formLogin.css"> <!--CSS FORMULARIO-->
 </head>
 
 <body>
@@ -85,13 +86,51 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de registro. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+	
+			<form action="">
+				<div class="login">
+					<div class="login-screen">
+						<div class="app-title">
+							<h1>Registrate</h1>
+						</div>
+			
+						<div class="login-form">
+							<div class="control-group">
+							<input type="text" class="login-field" value="" placeholder="Username" id="login-name">
+							<label class="login-field-icon fui-user" for="login-name"></label>
+							</div>
+			
+							<div class="control-group">
+							<input type="password" class="login-field" value="" placeholder="Password" id="login-pass">
+							<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
 
+							<div class="control-group">
+								<input type="text" class="login-field" value="" placeholder="E-mail" id="login-pass">
+								<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+
+							<div class="control-group">
+								<input type="date" class="login-field" value="" placeholder="Fecha de nacimiento" id="login-pass">
+								<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+
+							<div class="control-group">
+								<input type="text" class="login-field" value="" placeholder="DNI" id="login-pass">
+								<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+
+							<div class="control-group">
+								<input type="file" class="login-field" value="" placeholder="Foto" id="login-pass">
+								<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+			
+							<a class="btn btn-primary btn-large btn-block" href="#">COMENCEMOS</a>
+
+						</div>
+					</div>
+				</div>
+			</form>
 
 	<!-- footer -->
 	<footer class="main-footer">
