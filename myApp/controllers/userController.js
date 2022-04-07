@@ -1,9 +1,4 @@
-const userController = { //idem. la variable va const o conviene let?
-
-    //RUTA DE USER ---> este viene automatico, lo agrego tambien no?
-    /*user: function(req, res, next) {
-        return res.render('respond with a resource');
-      } ,*/
+const userController = { 
 
     //RUTA DE PROFILE 
     profile: function(req,res){
@@ -17,4 +12,4 @@ const userController = { //idem. la variable va const o conviene let?
 
 }; 
 
-module.exports = userController  //aca hay un problema con la exportacion no?
+module.exports = userController; 

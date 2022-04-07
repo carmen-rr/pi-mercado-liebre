@@ -1,8 +1,9 @@
-const indexController = { //la variable va const o conviene let?
+const indexController = { 
 
     //RUTA DE INDEX 
-    /*index: function(req, res, next) {
-    return res.render('index', { title: 'Express' });} */
+    index: function(req, res) {
+    return res.render('index', { title: 'Express' }); //se envian los productos de carpeta db 
+      }, 
 
     //RUTA DE SEARCH 
     search:  function(req,res) {
@@ -21,4 +22,4 @@ const indexController = { //la variable va const o conviene let?
 
 }; 
 
-module.exports = indexController // idem aca hay un problema con la exportacion no?
+module.exports = indexController; 
