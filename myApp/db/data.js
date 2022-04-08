@@ -35,7 +35,7 @@ let db ={
         {
         imagen:'/images/products/sportacus1.jpe', 
         nombre: 'Disfraz de Sportacus', 
-        descripcion: 'Disfraz de Sportacus(Lazy Town) para adultos', 
+        descripcion: 'Disfraz de Sportacus (Lazy Town) para adultos', 
         fechaDeCarga: '22/05/2022', 
         }, 
         {
