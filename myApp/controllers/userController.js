@@ -6,12 +6,16 @@ const userController = {
     profile: function(req,res){
         let nombreUsuario = db.usuario
         return res.render('profile', { 
-          dataUsuario: nombreUsuario })
+          dataUsuario: nombreUsuario 
+        })
       }, 
 
     //RUTA DE PROFILE-EDIT  
     profileEdit:  function(req,res){
-        return res.render('profile-edit')
+        let nombreUsuario = db.usuario
+        return res.render('profile-edit', {
+        dataUsuario: nombreUsuario
+        })
       }, 
 
 }; 
