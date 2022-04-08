@@ -3,7 +3,11 @@ const db = require("../db/data");
 const productController ={
     //RUTA PRODUCT
     producto: (req, res) => {
-        res.render('product');
+        let detalleProducto = db.producto[1]
+        res.render('product', {
+            nombreProducto: detalleProducto
+
+        });
     },
 
     //RUTA PRODUCT-ADD
