@@ -5,7 +5,12 @@ let db ={
         contraseña: 'te fuiste a la b', 
         fechaDeNacimiento: '10/04/1905',
         dni: 24061978, 
-        fotoDePerfil: '', 
+        fotoDePerfil: '/images/users/fotodeperfil.jpg',
+        cantidadDeProducto: 10,
+        seguidores: 500,
+        comentarios: 365
+
+
     },
 
     producto:[

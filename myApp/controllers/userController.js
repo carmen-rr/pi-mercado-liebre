@@ -4,9 +4,9 @@ const userController = {
 
     //RUTA DE PROFILE 
     profile: function(req,res){
-        let nombreUsuario = db.usuario.usuario
+        let nombreUsuario = db.usuario
         return res.render('profile', { 
-          nombre: nombreUsuario })
+          dataUsuario: nombreUsuario })
       }, 
 
     //RUTA DE PROFILE-EDIT  
