@@ -4,8 +4,10 @@ const productController ={
     //RUTA PRODUCT
     producto: (req, res) => {
         let detalleProducto = db.producto[1]
+        let commentarioProducto = db.comentarios[1]
         res.render('product', {
-            nombreProducto: detalleProducto
+            nombreProducto: detalleProducto, 
+            commentProducto: commentarioProducto,
 
         });
     },
