@@ -63,7 +63,7 @@ let db ={
         fechaDeCarga: '02/1/2022', 
         },
         {
-        imagen:'/images/products/alien1.jpeg', 
+        imagen:'/images/products/bob1.jpeg', 
         nombre: 'Disfraz de Alien', 
         descripcion: 'Disfraz de Alien para adultos', 
         fechaDeCarga: '08/04/2022', 
