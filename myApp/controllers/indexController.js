@@ -1,8 +1,13 @@
+const db = require("../db/data");
 const indexController = { 
 
     //RUTA DE INDEX 
     index: function(req, res) {
-    return res.render('index', { title: 'Express' }); //se envian los productos de carpeta db 
+    let detalleProducto = db.producto
+      return res.render('index', { 
+      dataProducto: detalleProducto  
+      // title: 'Express'
+       }); //se envian los productos de carpeta db 
       }, 
 
     //RUTA DE SEARCH 
