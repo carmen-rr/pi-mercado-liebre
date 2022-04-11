@@ -29,7 +29,7 @@ let db ={
         {
         imagen:'/images/products/panchito1.jpeg', 
         nombre: 'Pancho', 
-        descripcion: 'Disfraz de dinosaurio para perros', 
+        descripcion: 'Disfraz de pancho (Hot Dog) para perros', 
         fechaDeCarga: '16/09/2022', 
             },
         {
@@ -47,7 +47,7 @@ let db ={
         {
         imagen:'/images/products/banana1.jpeg', 
         nombre: 'Banana', 
-        descripcion: 'Disfraz de banana para adultos', 
+        descripcion: 'Disfraz de Banana para adultos', 
         fechaDeCarga: '03/09/2022', 
         },
         {
@@ -71,7 +71,7 @@ let db ={
         {
         imagen:'/images/products/buzz1.jpeg', 
         nombre: 'Buzz Light Year', 
-        descripcion: 'Disfraz de Buzz Light Year para adultos', 
+        descripcion: 'Disfraz de Buzz Light Year (Toy Story) para adultos', 
         fechaDeCarga: '23/12/2022', 
         }, 
     ],
@@ -79,28 +79,28 @@ let db ={
     comentarios:[
             {
             nombreDeUsuario:'Elnicocrack123', 
-            textoDeComentario: 'Me encanto este disfraz! Solo lo encontre aqui', 
-            imagenDePerfil: '/images/products/usuario.jpeg', 
+            textoDeComentario: '¡Me encanto este disfraz! Solo lo encontre aquí! Es un increíble negocio de disfraces, diría único', 
+            imagenDePerfil: '/images/products/usuario1.jpeg', 
             },
             {
             nombreDeUsuario:'Briangod', 
-            textoDeComentario: 'Me encanta este sitio web ', 
-            imagenDePerfil: '/images/products/usuario.jpeg', 
+            textoDeComentario: 'Lo recomiendo muchísimo, además me encanta su sitio web, fácil de usar y encuentro de todo ', 
+            imagenDePerfil: '/images/products/usuario2.jpeg', 
             },
             {
             nombreDeUsuario:'LuisN1', 
-            textoDeComentario: 'Muy buen disfraz, y buena variedad de productos', 
-            imagenDePerfil: '/images/products/usuario.jpeg', 
+            textoDeComentario: 'La calidad de los disfraces es muy buena. Del estudio de mercado que hice, probablemente sea el mejor lugar de los que vi.', 
+            imagenDePerfil: '/images/products/usuario1.jpeg', 
             },
             {
             nombreDeUsuario:'Velocipanchor123', 
-            textoDeComentario: 'Lo recomiendo mucho, siempre eligiendo el 31', 
-            imagenDePerfil: '/images/products/usuario.jpeg', 
+            textoDeComentario: 'Lo recomiendo mucho, cuando necesito un disfraz siempre acudo a Forever 31', 
+            imagenDePerfil: '/images/products/usuario2.jpeg', 
             },
             {
             nombreDeUsuario:'Sportacusfan2003', 
-            textoDeComentario: 'Muy buena compra', 
-            imagenDePerfil: '/images/products/usuario.jpeg', 
+            textoDeComentario: '¡Muy buen disfraz, mucha variedad y excelente calidad!', 
+            imagenDePerfil: '/images/products/usuario1.jpeg', 
             },
     ],  
     
