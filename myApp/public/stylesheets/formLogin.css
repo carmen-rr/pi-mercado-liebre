@@ -4,20 +4,23 @@
     
     *:focus {
         outline: none;
+        
     }
-    body {
-    font-family: Arial;
-    background-color: #3498DB;
-    padding: 50px;
-    }
+
+    
     .login {
-    margin: 20px auto;
+    margin: 60px auto;
     width: 300px;
+    
+    }
+    .form{
+
     }
     .login-screen {
     background-color: #FFF;
     padding: 20px;
-    border-radius: 5px
+    border-radius: 5px;
+       
     }
     
     .app-title {
@@ -32,7 +35,7 @@
     margin-bottom: 10px;
     }
     
-    .input {
+    input {
     text-align: center;
     background-color: #ECF0F1;
     border: 2px solid transparent;
@@ -45,13 +48,13 @@
     }
     
     input:focus {
-    border: 2px solid #3498DB;
+    border: 2px solid;
     box-shadow: none;
     }
     
     .btn {
       border: 2px solid transparent;
-      background: #3498DB;
+      background: hsl(32, 100%, 50%);
       color: #ffffff;
       font-size: 16px;
       line-height: 25px;
@@ -64,10 +67,11 @@
       display: block;
       width: 250px;
       margin: 0 auto;
+      text-align: center;
     }
     
     .btn:hover {
-      background-color: #2980B9;
+      background-color: hsl(32, 97%, 64%);
     }
     
     .login-link {
