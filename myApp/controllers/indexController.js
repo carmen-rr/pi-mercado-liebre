@@ -12,7 +12,12 @@ const indexController = {
 
     //RUTA DE SEARCH 
     search:  function(req,res) {
-        return res.render('search-results')
+      let palabraBuscada = req.query.search;
+      let nombreProducto = db.producto;
+        return res.render('search-results', {
+          palabra : palabraBuscada,
+          dataProducto: nombreProducto,
+            })
       } ,
 
     //RUTA DE LOGIN 

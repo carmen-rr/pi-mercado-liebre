@@ -4,7 +4,7 @@ var router = express.Router();
 const indexController = require('../controllers/indexController')  
  
 
-router.get ('/search', indexController.index); 
+router.get ('/search', indexController.search); 
 
 router.get('/login', indexController.login); 
 

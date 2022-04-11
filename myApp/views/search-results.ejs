@@ -7,7 +7,7 @@
 <body>
 	<!-- Header -->
 	
-	<% include('./partials/headerNot') %> 
+	<%- include('./partials/headerNot') %> 
 
 	<!-- /Header -->
 
@@ -15,13 +15,34 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h2 class="products-title">Resultados de búsqueda para <strong><%= palabra %> </strong></h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
+			<!-- <h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
 			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
+			////////////////-->
 			</h2>
+
+			<% for(let i=0; i<4; i++) { %>				
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product">
+							<figure class="product-box_image">
+								<img src= "<%= dataProducto[i].imagen %>" alt="cafetera moulinex">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= dataProducto[i].nombre %> </h2>
+								<p><%= dataProducto[i].descripcion %></p>
+								<p><%= dataProducto[i].fechaDeCarga %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+	
+				<% }  %> 
+	
+			</div>
+		</div>
 
 
 		<!-- footer -->
