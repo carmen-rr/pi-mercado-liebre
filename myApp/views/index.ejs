@@ -18,14 +18,14 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
+				<h1 class="products-title">Novedades</h1>
 			</div>
 			<!-- Show the "ultimos" products -->
 
 			<% for(let i=0; i<4; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="product">
+						<a class= "hipervinculo" href="product">
 							<figure class="product-box_image">
 								<img src= <%= dataProducto[i].imagen %> alt="cafetera moulinex">
 							</figure>
@@ -46,7 +46,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
+				<h1 class="products-title">Más comentados</h1>
 			</div>
 			<!-- Show the "ultimos" products -->
 			
@@ -54,7 +54,7 @@
 
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product">
+					<a class="hipervinculo" href="product">
 						<figure class="product-box_image">
 							<img src= <%= dataProducto[i].imagen %> alt="cafetera moulinex">
 						</figure>

@@ -17,9 +17,9 @@
 
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= nombreProducto.nombre %> </h2> 
+			<h1 class="products-title"> <%= nombreProducto.nombre %> </h1> 
 			<p class="product-detail-description">
-				<a href="/product/add">Editar</a>
+				<a class="hipervinculo" href="/product/add">Editar</a>
 			</p>
 		</div>
 
@@ -42,7 +42,7 @@
 							<img src= <%= commentProducto[i].imagenDePerfil %>   alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/user/profile"> <%= commentProducto[i].nombreDeUsuario %>:</a> </strong>
+								<strong> <a class="hipervinculo" href="/user/profile"> <%= commentProducto[i].nombreDeUsuario %>:</a> </strong>
 								 <%= commentProducto[i].textoDeComentario %> </p>
 							</div>
 						</article>
@@ -52,7 +52,7 @@
 
 
 					<form class="form" action="/product">
-						<a href="/product"></a>
+						<a class="hipervinculo" href="/product"></a>
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button" >AGREGAR COMENTARIO</button>
 						</a>
