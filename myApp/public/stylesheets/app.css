@@ -4,11 +4,11 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #381969;
+  --yellow: #381969; /* Modifica el header */
   --dark-blue: #ffffff;
   --light-blue: #1259c3;
   --gray: #050505;
-  --light-gray:  #381969; 
+  --light-gray:  #512991; 
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
 }
@@ -78,10 +78,11 @@ hr {
   
 }
 
-.main-header_credit-link {
+.main-header_credit-link {    /* TODAS LAS OPINIONES */
   font-size: 1.5em;
   margin-top: 20px;
   text-align: center;
+  color: white;
 }
 
 .search-form {
@@ -153,12 +154,6 @@ hr {
   border-bottom: solid 1px var(--gray);
 }
 
-
-  
-
-
-
-
 /*====== Banner ======*/
 .banner {
   background-image: url(/images/img-home-banner.jpg);
@@ -177,18 +172,18 @@ hr {
 
 
 
-
 .product-box {
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
-  box-shadow: 0px -1px 20px 5px rgb(255 255 255);
+  box-shadow: 0px -1px 20px 5px rgb(255 255 255); /* Efecto de difuminado*/
 }
 
 .product-box a {
   display: block;
+
 }
 
 .product-box_image {
@@ -201,12 +196,18 @@ hr {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;    /* Alineacion del h2 de productos */
+  
 }
 
 .product-box_data h2 {
   font-size: 2.4em;
-  font-weight: 300;
+  font-weight: bold; /* Cambiamos el grosor de la letra del h2 de productos */
   margin: 0;
+  align-items: center;
+  color: #381969;;
+  
+
 }
 
 .product-box_data span {
@@ -226,7 +227,7 @@ hr {
   overflow: hidden;
 }
 
-.product-box_data i {
+.product-box_data i {     /* Aca*/
   color: var(--green);
   font-size: 1.8em;
   width: 35px;
@@ -242,6 +243,8 @@ hr {
   justify-content: center;
   align-items: center;
   transition: 300ms;
+  
+  
 }
 
 .noproducts {
@@ -264,30 +267,39 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: hsl(286, 87%, 31%);
+  background-color: #804bd4;
   padding: 20px 0;
   margin-top: 80px;
 }
+
+.creditos{
+  margin-left: 270px; /* Lo centramos como pudimos */
+  color: white;
+}
+
 
 .footer-data {
   text-align: center;
 }
 
-.footer-data i {
+.footer-data i {              /* Color Iconos */
   color: var(--light-blue);
   font-size: 3.5em;
+  color: hsl(32, 97%, 64%);
 }
 
 .footer-data h2 {
   color: var(--gray);
   font-size: 2.4em;
   font-weight: 400;
+  color: white;       /* Color de los titulos del footer*/
 }
 
 .footer-data p {
   color: var(--gray);
   font-size: 1.5em;
   font-weight: 300;
+  color: white;     /* Color del p del footer */
 }
 
 .sub-footer {
@@ -474,13 +486,6 @@ textarea.form-input {
   margin-bottom: 10px;
 }
 
-.btn{
-  background-color: #1259c3;
-  padding: 10px 20px;
-  border-radius: 4px;
-  color: #fff;
-}
-
 h1{
   color: rgb(243, 160, 64);
   font-family: 'Roboto Condensed';
@@ -491,6 +496,7 @@ h1{
   color: rgb(198, 228, 28);
   font-family: 'Roboto Condensed', sans-serif;
   font-family: 'Sarabun', sans-serif;
+  
 }
 
 /*====== Media-Queries ======*/
