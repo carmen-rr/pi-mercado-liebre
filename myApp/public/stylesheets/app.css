@@ -82,7 +82,7 @@ hr {
   font-size: 1.5em;
   margin-top: 20px;
   text-align: center;
-  color: white;
+  color: rgb(250, 248, 246);
 }
 
 .search-form {
@@ -105,7 +105,8 @@ hr {
   position: absolute;
   right: 2px;
   height: 60%;
-  background-color: #ffffff;
+  background-color: transparent;
+  /*color del boton de busqueda*/
   border: none;
   border-left: solid 1px var(--light-gray);
   color: var(--gray);
@@ -215,6 +216,7 @@ hr {
   font-weight: 300;
   color: var(--green);
   margin: 0 0 0 10px;
+
 }
 
 .product-box_data p {
@@ -225,6 +227,7 @@ hr {
   height: 0;
   transition: 300ms;
   overflow: hidden;
+
 }
 
 .product-box_data i {     /* Aca*/
@@ -243,6 +246,7 @@ hr {
   justify-content: center;
   align-items: center;
   transition: 300ms;
+
   
   
 }
@@ -258,11 +262,14 @@ hr {
 .product-box:hover p {
   height: 36px;
   margin-top: 15px;
+
+
 }
 
 .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+
 }
 
 /*====== Footer ======*/
@@ -317,6 +324,8 @@ hr {
 /*====== Product Detail ======*/
 .product-detail {
   background-color: #ffffff;
+  box-shadow: 0px 5px 40px 10px rgb(41, 11, 51); /* Efecto de difuminado en producto*/
+
   border-radius: 8px;
   overflow: hidden;
 }
@@ -330,6 +339,7 @@ hr {
 .product-detail-info {
   border-right: 1px solid var(--light-gray);
   padding: 15px;
+  
   /* height: 100%; */
 }
 
@@ -487,16 +497,32 @@ textarea.form-input {
 }
 
 h1{
-  color: rgb(243, 160, 64);
+  color: rgb(249, 247, 246);
   font-family: 'Roboto Condensed';
   font-size: 50px;
+  text-shadow: 2px 2px 2px #ee7423;
+
 }
 
+.forms-h1{
+  color: rgb(251, 248, 245);
+  font-family: 'Roboto Condensed';
+  font-size: 50px;
+  text-shadow: 0 0 6px #ff4d00, 0 0 10px #f3a20d; /*glow en los h1*/
+
+} 
+
 .hipervinculo{
-  color: rgb(198, 228, 28);
+  color: rgb(240, 212, 246);
   font-family: 'Roboto Condensed', sans-serif;
   font-family: 'Sarabun', sans-serif;
+  font-weight: bold;
+
   
+}
+
+.datos-profile{
+  color: white;
 }
 
 /*====== Media-Queries ======*/

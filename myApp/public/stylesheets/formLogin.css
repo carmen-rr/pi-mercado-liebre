@@ -16,6 +16,9 @@
    
     .login-screen {
     background-color: #FFF;
+    box-shadow: 0px 0px 50px 15px rgb(41, 11, 51); /* Efecto de difuminado en formulario*/
+    border-color: rgb(238, 212, 247);
+    border-width: 10px;
     padding: 20px;
     border-radius: 5px;
        
