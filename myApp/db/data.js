@@ -1,4 +1,4 @@
-let db ={
+let db = {
     usuario:{
         email: 'gogo_boquita@sosmivida.com.bo', 
         usuario: 'Gogoxeneize2007', 
@@ -31,7 +31,7 @@ let db ={
         nombre: 'Pancho', 
         descripcion: 'Disfraz de pancho (Hot Dog) para perros', 
         fechaDeCarga: 'Fecha de carga: 16/09/2022', 
-            },
+        },
         {
         imagen:'/images/products/sportacus1.jpeg', 
         nombre: 'Sportacus', 
@@ -88,7 +88,7 @@ let db ={
             imagenDePerfil: '/images/products/usuario2.jpeg', 
             },
             {
-            nombreDeUsuario:'LuisN1', 
+            nombreDeUsuario:'LuisTiburonDeLaGuaira', 
             textoDeComentario: 'La calidad de los disfraces es muy buena. Del estudio de mercado que hice, probablemente sea el mejor lugar de los que vi.', 
             imagenDePerfil: '/images/products/usuario3.jpeg', 
             },
@@ -106,4 +106,4 @@ let db ={
     
 }
 
-module.exports = db
+module.exports = db;
