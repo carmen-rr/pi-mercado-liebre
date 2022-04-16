@@ -1,23 +1,21 @@
 const db = require("../db/data");
 
-const productController ={
+const productController = {
+
     //RUTA PRODUCT
     producto: (req, res) => {
-        let detalleProducto = db.producto[1]
-        let commentarioProducto = db.comentarios
         res.render('product', {
-            nombreProducto: detalleProducto, 
-            commentProducto: commentarioProducto,
+            nombreProducto: db.producto[1], 
+            commentProducto: db.comentarios,
 
         });
     },
 
     //RUTA PRODUCT-ADD
-    agregarProducto: (req, res)=>{
-        let nombreUsuario = db.usuario
-        res.render('product-add', {
-        dataUsuario: nombreUsuario
-        }); //acá lo estoy conectando con las vistas
+    agregarProducto: (req, res) => {
+            res.render('product-add', {
+             dataUsuario: db.usuario
+        }); 
     },
 }
 

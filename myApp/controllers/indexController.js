@@ -1,23 +1,25 @@
 const db = require("../db/data");
+
 const indexController = { 
 
     //RUTA DE INDEX 
     index: function(req, res) {
-    let detalleProducto = db.producto
       return res.render('index', { 
-      dataProducto: detalleProducto  
-      // title: 'Express'
-       }); //se envian los productos de carpeta db 
+
+        dataProducto: db.producto,  
+
+       }); 
       }, 
 
     //RUTA DE SEARCH 
     search:  function(req,res) {
       let palabraBuscada = req.query.search;
-      let nombreProducto = db.producto;
-        return res.render('search-results', {
-          palabra : palabraBuscada,
-          dataProducto: nombreProducto,
-            })
+      return res.render('search-results', {
+
+        palabra : palabraBuscada,
+        dataProducto: db.producto,
+
+          })
       } ,
 
     //RUTA DE LOGIN 
