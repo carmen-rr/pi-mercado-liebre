@@ -102,6 +102,31 @@ let db = {
             textoDeComentario: '¡Muy buen disfraz, mucha variedad y excelente calidad!', 
             imagenDePerfil: '/images/products/usuario5.jpeg', 
             },
+            {
+            nombreDeUsuario:'d10sito', 
+            textoDeComentario: 'Que buen disfraz! Una compra de 10 ;)', 
+            imagenDePerfil: '/images/products/usuario1.jpeg', 
+                },
+                {
+            nombreDeUsuario:'Elrockstarflogger00', 
+            textoDeComentario: 'La compra llego en impecable estado! Sumamente recomendado', 
+            imagenDePerfil: '/images/products/usuario2.jpeg', 
+                },
+                {
+            nombreDeUsuario:'Popeyemarinosoy', 
+            textoDeComentario: '¡Muy original!', 
+            imagenDePerfil: '/images/products/usuario3.jpeg', 
+                },
+                {
+            nombreDeUsuario:'Teletubbie007', 
+            textoDeComentario: 'Nuevamente, vuelvo a elegir Forever 31', 
+            imagenDePerfil: '/images/products/usuario4.jpeg', 
+                },
+                {
+            nombreDeUsuario:'Elgranediporey', 
+            textoDeComentario: '¡Me encanto, recomiendo!', 
+            imagenDePerfil: '/images/products/usuario5.jpeg', 
+                },
     ],  
     
 }
