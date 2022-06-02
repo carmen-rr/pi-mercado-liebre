@@ -15,14 +15,14 @@ module.exports = function (sequelize, dataType){
     
             updatedAt: {
                     type: dataTypes.DATE
-                }
+                } 
     
             };
     
     let config = {
             tableName: 'seguidores', 
-            timestamps: true, //Si la tabla tiene los campos created_at y updated_at
-            underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
+            timestamps: true, 
+            underscored: true, 
          }
     
          const Seguidor = sequelize.define(alias, cols, config); 
