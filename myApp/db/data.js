@@ -53,7 +53,7 @@ let db = {
         {
         imagen:'/images/products/yoda1.jpeg', 
         nombre: 'Baby Yoda', 
-        descripcion: 'Disfraz de Yoda para bebes', 
+        descripcion: 'Disfraz de Baby Yoda para niños bonitos y gprditos', 
         fechaDeCarga: '2022-11-08', 
         }, 
         {
