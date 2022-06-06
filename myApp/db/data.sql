@@ -31,11 +31,10 @@ CREATE TABLE usuario (
     imagen            VARCHAR(300)        NOT NULL,
     nombre            VARCHAR(45)         NOT NULL,
     descripcion       VARCHAR(200)        NOT NULL,
+	id_usuario INT UNSIGNED NOT NULL,
     created_at        DATE                NULL,
     updated_at        DATE                NULL, 
     
-	id_usuario INT UNSIGNED NOT NULL,
-    /*FOREIGN KEY   (nombre de columna)  REFERENCES   nombredetabla(id)  */
     FOREIGN KEY (id_usuario) REFERENCES usuario(id)
     ); 
     
