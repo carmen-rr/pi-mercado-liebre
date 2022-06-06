@@ -1,4 +1,4 @@
-module.exports = function (sequelize, dataType){
+module.exports = function (sequelize, dataTypes){
 
     let alias = 'Usuario'; 
     
@@ -78,7 +78,7 @@ module.exports = function (sequelize, dataType){
 
         Usuario.associate = function (models){ 
             Usuario.belongsToMany(models.Usuario, {
-                as:"seguidores", 
+                as:"usuario_usuario", 
 
                 through: "seguidores", 
 
