@@ -46,13 +46,13 @@ module.exports = function (sequelize, dataType){
 
          Producto.associate = function (models){ 
             Producto.belongsTo(models.Usuario, {
-                as:"usuario", //la relacion de usuario y producto 
+                as:"usuario_producto", //la relacion de usuario y producto 
                 foreignKey:"id_usuario"
             });}
 
             Producto.associate = function (models){ 
                 Producto.hasMany(models.Comentario, {
-                    as:"producto", //la relacion de producto y comentarios 
+                    as:"comentario_producto", //la relacion de producto y comentarios 
                     foreignKey:"id_producto"
                 });}
 

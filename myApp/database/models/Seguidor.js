@@ -29,7 +29,7 @@ module.exports = function (sequelize, dataType){
 
          Seguidor.associate = function (models){ 
             Seguidor.belongsToMany(models.Usuario, {
-                as:"seguidores", 
+                as:"usuario_seguidores", 
 
                 through: "seguidores", 
 

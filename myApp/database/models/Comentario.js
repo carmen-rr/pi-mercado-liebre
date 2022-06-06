@@ -33,13 +33,13 @@ let config = {
 
     Comentario.associate = function (models){ 
         Comentario.belongsTo(models.Usuario, {
-            as:"usuario", //la relacion de usuario y comentario 
+            as:"usuario_comentarios", //la relacion de usuario y comentario 
             foreignKey:"id_usuario"
         });}
 
     Comentario.associate = function (models){ 
         Comentario.belongsTo(models.Producto, {
-            as:"comentarios", //la relacion de producto y comentarios 
+            as:"producto_comentarios", //la relacion de producto y comentarios 
             foreignKey:"id_producto"
         });}
 
