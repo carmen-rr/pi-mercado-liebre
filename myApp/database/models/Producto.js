@@ -1,7 +1,7 @@
 
 module.exports = function (sequelize, dataTypes){
 
-    let alias = 'Producto'; 
+    let alias = "Producto"; 
     
      let cols = { //ol que tiene todas las columnas de la tabla 
             id: {

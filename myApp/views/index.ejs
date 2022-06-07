@@ -30,7 +30,7 @@
 								<img src= <%= dataProducto[i].imagen %> alt="producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= dataProducto[i].nombre %></h2>
+								<a href="/product/id/<%= dataProducto[i].id %>"><h2><%= dataProducto[i].nombre %></h2></a> 
 								<p><%= dataProducto[i].descripcion %></p>
 								<p><%= dataProducto[i].fechaDeCarga %></p>
 							</article>

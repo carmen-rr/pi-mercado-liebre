@@ -1,9 +1,15 @@
 const db = require("../db/data");
+const data = require("../database/models");
+
+const producto = data.Producto; 
+const comentarios = data.Comentario; 
+const usuario = data.Usuario; 
 
 const productController = {
 
     //RUTA PRODUCT
     producto: (req, res) => {
+        let idProducto = req.params.id;
         res.render('product', {
             nombreProducto: db.producto[1], 
             commentProducto: db.comentarios,

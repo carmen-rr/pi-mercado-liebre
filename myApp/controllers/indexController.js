@@ -1,4 +1,7 @@
 const db = require("../db/data");
+const data = require("../database/models");
+
+const producto = data.Producto 
 
 const indexController = { 
 
