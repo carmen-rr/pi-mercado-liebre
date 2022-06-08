@@ -41,13 +41,5 @@ const indexController = {
 
 }; 
 
-/*let indexController ={
-  index: function(req, res){
-      data.Producto.findAll()
-      .then(function(productos){
-          res.render("index",{producto: productos})
-      });
-  },
-}*/
 
 module.exports = indexController; 
