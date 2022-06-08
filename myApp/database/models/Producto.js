@@ -22,10 +22,6 @@ module.exports = function (sequelize, dataTypes){
                     type: dataTypes.STRING
                 }, 
     
-                fechaDeCarga:{
-                    type: dataTypes.DATE
-                }, 
-    
                 createdAt: {
                     type: dataTypes.DATE
                 }, 

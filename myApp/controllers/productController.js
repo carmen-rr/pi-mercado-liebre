@@ -10,11 +10,15 @@ const productController = {
     //RUTA PRODUCT
     producto: (req, res) => {
         let idProducto = req.params.id;
-        res.render('product', {
+        console.log(idProducto)
+       producto.findByPk(1).then(data => res.send(data))
+      
+       
+       /* res.render('product', {
             nombreProducto: db.producto[1], 
             commentProducto: db.comentarios,
 
-        });
+        });*/
     },
 
     //RUTA PRODUCT-ADD
@@ -24,5 +28,7 @@ const productController = {
         }); 
     },
 }
+
+
 
 module.exports = productController;

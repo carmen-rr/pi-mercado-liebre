@@ -27,12 +27,12 @@
 					<section class="product-box">
 						<a class= "hipervinculo" href="product">
 							<figure class="product-box_image">
-								<img src= <%= dataProducto[i].imagen %> alt="producto">
+								<img src='/images/products/<%= productos[i].imagen %>' alt="producto">
 							</figure>
 							<article class="product-box_data">
-								<a href="/product/id/<%= dataProducto[i].id %>"><h2><%= dataProducto[i].nombre %></h2></a> 
-								<p><%= dataProducto[i].descripcion %></p>
-								<p><%= dataProducto[i].fechaDeCarga %></p>
+								<a href="/product/detalle/id/<%= productos[i].id %>"><h2><%= productos[i].nombre %></h2></a> 
+								<p><%= productos[i].descripcion %></p>
+								<p><%= productos[i].createdAt %></p>
 							</article>
 						</a>
 					</section>
@@ -56,12 +56,12 @@
 				<section class="product-box">
 					<a class="hipervinculo" href="product">
 						<figure class="product-box_image">
-							<img src= <%= dataProducto[i].imagen %> alt="producto">
+							<img src= '/images/products/<%= productos[i].imagen %>' alt="producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= dataProducto[i].nombre %></h2>
-							<p><%= dataProducto[i].descripcion %></p>
-							<p><%= dataProducto[i].fechaDeCarga %></p>
+							<h2><%= productos[i].nombre %></h2>
+							<p><%= productos[i].descripcion %></p>
+							<p><%= productos[i].fechaDeCarga %></p>
 						</article>
 					</a>
 				</section>

@@ -1,17 +1,20 @@
 const db = require("../db/data");
 const data = require("../database/models");
 
-const producto = data.Producto 
+const productos = data.Producto; 
+const comentarios = data.Comentario; 
+const usuario = data.Usuario; 
 
 const indexController = { 
 
-    //RUTA DE INDEX 
-    index: function(req, res) {
-      return res.render('index', { 
-
-        dataProducto: db.producto,  
-
-       }); 
+    //INDEX 
+    index: (req, res) => {
+      productos.findAll({
+        order: [[ "createdAt" , "DESC"]]
+      })
+      .then((result) => {
+        return res.render('index', {productos : result})
+      })
       }, 
 
       //comentario
@@ -37,5 +40,14 @@ const indexController = {
       }, 
 
 }; 
+
+/*let indexController ={
+  index: function(req, res){
+      data.Producto.findAll()
+      .then(function(productos){
+          res.render("index",{producto: productos})
+      });
+  },
+}*/
 
 module.exports = indexController; 
