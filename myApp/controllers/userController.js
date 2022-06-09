@@ -2,7 +2,7 @@ const db = require("../db/data");
 const data = require("../database/models");
 
 const usuario = data.Usuario; 
-const producto = data.Producto;
+const productos = data.Producto;
 
 const userController = { 
 
