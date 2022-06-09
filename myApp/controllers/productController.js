@@ -26,6 +26,9 @@ const productController = {
             res.render('product-add', {
              dataUsuario: db.usuario
         }); 
+
+        let imagenProducto = req.file.filename;
+      
     },
 }
 
