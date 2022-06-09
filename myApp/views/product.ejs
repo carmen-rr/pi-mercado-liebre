@@ -17,7 +17,7 @@
 
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h1 class="products-title"> <%= nombreProducto.nombre %> </h1> 
+			<h1 class="products-title"> <%= producto.nombre %> </h1> 
 			<p class="product-detail-description">
 				<a class="hipervinculo" href="/product/add">Editar</a>
 			</p>
@@ -27,14 +27,14 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src= <%= nombreProducto.imagen %>  alt="" class="product-detail-img">
+					<img src= <%= producto.imagen %>  alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= nombreProducto.descripcion %> 
+						<%=producto.descripcion %> 
 					</p>
 				</article>
 				<div class="col-12 col-lg-4">
 
-				<% for (let i=0; i<commentProducto.length; i++) { %> 
+				<% for (let i=0; i<producto.comentario.length; i++) { %> 
 
 
 					<section class="comments">

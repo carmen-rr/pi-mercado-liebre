@@ -1,7 +1,7 @@
 const db = require("../db/data");
 const data = require("../database/models");
 
-const producto = data.Producto; 
+const productos = data.Producto; 
 const comentarios = data.Comentario; 
 const usuario = data.Usuario; 
 
@@ -11,7 +11,10 @@ const productController = {
     producto: (req, res) => {
         let idProducto = req.params.id;
         console.log(idProducto)
-       producto.findByPk(1).then(data => res.send(data))
+       productos.findByPk(idProducto)
+       .then(result => res.render('product', {
+           producto: result
+       }))
       
        
        /* res.render('product', {

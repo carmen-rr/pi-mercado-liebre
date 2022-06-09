@@ -18,7 +18,6 @@ const indexController = {
       })
       }, 
 
-      //comentario
     //RUTA DE SEARCH 
     search:  function(req,res) {
       let palabraBuscada = req.query.search;

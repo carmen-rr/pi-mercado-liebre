@@ -25,7 +25,7 @@ const productController = require('../controllers/productController');
 
 //router.get ('/', productController.producto); 
 
-router.get('/detalle', productController.producto);
+router.get('/detalle/:id', productController.producto);
 
 router.get ('/add', productController.agregarProducto);
 
