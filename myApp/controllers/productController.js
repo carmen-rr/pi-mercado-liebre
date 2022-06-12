@@ -1,5 +1,7 @@
 const db = require("../db/data");
 const data = require("../database/models");
+const op = data.Sequelize.Op;
+
 
 const productos = data.Producto; 
 const comentarios = data.Comentario; 

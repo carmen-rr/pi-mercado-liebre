@@ -1,5 +1,6 @@
 const db = require("../db/data");
 const data = require("../database/models");
+const op = data.Sequelize.Op; 
 
 
 const productos = data.Producto; 
@@ -21,13 +22,37 @@ const indexController = {
     //RUTA DE SEARCH 
     search:  function(req,res) {
       let palabraBuscada = req.query.search;
-      return res.render('search-results', {
+      productos.findOne({
+        where:[ 
+           // {nombre: {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
+            {descripcion:{[op.like] :  "%"+ palabraBuscada +"%"}  }    //descripcion
 
-        palabra : palabraBuscada,
-        dataProducto: db.producto,
+                    ]
+      })
+      .then((result) => {
+        return res.send(result)
+      })
+     
+      } , 
+
+     /* search:  function(req,res) {
+        let palabraBuscada = req.query.search;
+        productos.findOne({
+          where:[
+            //{nombre : palabraBuscada}
+            {nombre: {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
+            //{descripcion:{[op.like] :  "%"+ palabraBuscada +"%"}  }    //descripcion
+                      ]
+        })
+        .then((result) => {
+          return res.render('search-results', {
+            palabra : palabraBuscada,
+            productos: result,
 
           })
-      } ,
+        })
+       
+        } ,  */
 
     //RUTA DE LOGIN 
     login:  function (req,res){
