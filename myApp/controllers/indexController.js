@@ -12,6 +12,7 @@ const indexController = {
     //INDEX 
     index: (req, res) => {
       productos.findAll({
+
         order: [[ "createdAt" , "DESC"]]
       })
       .then((result) => {
@@ -33,26 +34,30 @@ const indexController = {
         return res.send(result)
       })
      
-      } , 
+      } ,
 
-     /* search:  function(req,res) {
-        let palabraBuscada = req.query.search;
-        productos.findOne({
-          where:[
-            //{nombre : palabraBuscada}
-            {nombre: {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
-            //{descripcion:{[op.like] :  "%"+ palabraBuscada +"%"}  }    //descripcion
-                      ]
-        })
-        .then((result) => {
-          return res.render('search-results', {
-            palabra : palabraBuscada,
-            productos: result,
+      /*
+      //PROMESA DE NOBRE DE PRODUCTO 
+      let nombrePromesa =  productos.findAll({
+        where:[ 
+           {nombre : {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
 
-          })
-        })
-       
-        } ,  */
+                    ]
+      })
+      //PROMESA DE DESCRIPCION DE PRODUCTO 
+      let descripcionPromesa =  productos.findAll({
+        where:[ 
+           {descripcion : {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
+
+                    ]
+      })
+
+      Promise.all([nombrePromesa, descripcionPromesa])
+      //callback que recibe un array con los resultados de las promesas 
+      .then(function ([resultadoNombre, resultadoDescripcion]){
+        console.log(resultadoNombre, resultadoDescripcion)
+      }) */
+
 
     //RUTA DE LOGIN 
     login:  function (req,res){
