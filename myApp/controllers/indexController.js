@@ -60,16 +60,39 @@ const indexController = {
 
 
     //RUTA DE LOGIN 
-    login:  function (req,res){
+    loginCreate:  function (req,res){
+        return res.render('login')
+      }, 
+
+     loginStore:  function (req,res){
         return res.render('login')
       }, 
 
     //RUTA DE REGISTER 
-    register:  function (req,res){
+    registerCreate:  function (req,res){
         return res.render('register')
       }, 
 
-}; 
+    registerStore:  function (req,res){
+      let info = req.body; //guardando los datos del forms
+      let usuarioCreado = { //creando el usuario 
 
+        usuario : info.usuario, 
+        contrasenia: info.contrasenia, 
+        email: info.email, 
+        fechaDeNacimiento: info.fechaDeNacimiento, 
+        dni: info.dni, 
+        fotoDePerfil: info.fotoDePerfil,
+
+      }
+      usuario.create(
+        usuarioCreado
+      )
+      .then((result) =>{
+        return res.redirect("/user/profile")
+      })
+      }, 
+
+}; 
 
 module.exports = indexController; 

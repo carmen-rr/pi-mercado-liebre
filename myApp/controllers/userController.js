@@ -20,13 +20,28 @@ const userController = {
 
     //RUTA DE PROFILE-EDIT  
     profileEdit:  function(req,res){
-        return res.render('profile-edit', {
+      return res.render('profile-edit', {
 
-          dataUsuario: db.usuario, 
-        
-        })
-      }, 
-
+        dataUsuario: db.usuario, 
+      
+      })
+    },  
 }; 
+
+
+/* profileEdit:  function(req,res){
+      let id = req.params.id; 
+      usuario.findByPk(id)
+      .then(
+        (result)=>{
+          return res.render('profile-edit', {
+
+            dataUsuario: result, 
+           
+           })
+        }
+      )
+      }, 
+}; */ 
 
 module.exports = userController; 

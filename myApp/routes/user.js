@@ -7,6 +7,8 @@ const userController = require('../controllers/userController');
 router.get('/profile', userController.profile); 
 
 router.get('/profile/edit', userController.profileEdit); 
+//router.get('/profile/edit:id', userController.profileEdit); 
+
 
 
 module.exports = router;

@@ -6,9 +6,16 @@ const indexController = require('../controllers/indexController')
 
 router.get ('/search', indexController.search); 
 
-router.get('/login', indexController.login); 
+//RUTAS DE LOGIN 
+router.get('/login', indexController.loginCreate);  //me muestra el formulario para que pueda cargar la info 
 
-router.get('/register', indexController.register); 
+    //router.post ('/login', indexController.loginStore) //capturar la informacion del formulario 
+
+//RUTAS DE RESGISTER
+router.get('/register', indexController.registerCreate);  //me muestra el formulario para que pueda cargar la info 
+
+    router.post('/register', indexController.registerStore);  //capturar la informacion del formulario 
+
 
 /* GET home page. */
 router.get('/', indexController.index);
