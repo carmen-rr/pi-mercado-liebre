@@ -18,6 +18,9 @@ const productController = {
            producto: result
        }))
       
+       /* 
+        {association: 'comentario_producto', include: [{association:'usuario'}]}
+        */
        
        /* res.render('product', {
             nombreProducto: db.producto[1], 
