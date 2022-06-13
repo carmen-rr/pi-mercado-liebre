@@ -37,10 +37,12 @@ const productController = {
     
     store: (req, res) => {
        let info = req.body;
+       let imagenNombre = req.file.filename;
        let crearProducto =  {
-        imagen: info.imagenProducto,
+        imagen: imagenNombre,
         nombre: info.nombre,
-        descripcion: info.descripcion,    
+        descripcion: info.descripcion, 
+        id_usuario :  1// req.session.user.id   
        }
 
        productos.create(
