@@ -1,6 +1,8 @@
 const db = require("../db/data");
 const data = require("../database/models");
 const op = data.Sequelize.Op;
+//const bcryptjs = require ('bcryptjs')
+
 
 
 const usuario = data.Usuario; 

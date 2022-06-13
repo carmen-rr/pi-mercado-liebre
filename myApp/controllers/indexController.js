@@ -1,6 +1,7 @@
 const db = require("../db/data");
 const data = require("../database/models");
 const op = data.Sequelize.Op; 
+//const bcryptjs = require ('bcryptjs')
 
 
 const productos = data.Producto; 
@@ -78,7 +79,7 @@ const indexController = {
       let usuarioCreado = { //creando el usuario 
 
         usuario : info.usuario, 
-        contrasenia: info.contrasenia, 
+        contrasenia: info.contrasenia, //HASHING aca vamos a usar bcrypt con la pass encriptada
         email: info.email, 
         fechaDeNacimiento: info.fechaDeNacimiento, 
         dni: info.dni, 
