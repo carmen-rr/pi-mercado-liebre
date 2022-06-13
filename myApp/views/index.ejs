@@ -6,7 +6,11 @@
 
 <body>
 
-	<%- include('./partials/headerNot')%> 
+	<% if (locals.users != undefined) { %>
+		<%- include('./partials/headerLogueado')%> 
+<% } else { %>
+		<%- include('./partials/headerNot')%> 
+<% } %> 
 	
 	<!-- Banner -->
 	<div class="banner">
