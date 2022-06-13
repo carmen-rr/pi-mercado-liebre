@@ -3,7 +3,11 @@
 
 <!-- Include Head -->
 
-<%- include('./partials/head')%> 
+<% if (locals.users != undefined) { %>
+	<%- include('./partials/headerLogueado')%> 
+<% } else { %>
+	<%- include('./partials/headerNot')%> 
+<% } %> 
 
 <body>
 	<!-- Header -->
