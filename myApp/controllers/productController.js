@@ -29,13 +29,26 @@ const productController = {
         });*/
     },
 
-    //RUTA PRODUCT-ADD
-    agregarProducto: (req, res) => {
-            res.render('product-add', {
-             dataUsuario: db.usuario
-        }); 
+    //RUTA PRODUCT-ADD.
+    
+    create: (req, res) => {
+        return res.render('product-add');
+    },
+    
+    store: (req, res) => {
+       let info = req.body;
+       let crearProducto =  {
+        imagen: info.imagenProducto,
+        nombre: info.nombre,
+        descripcion: info.descripcion,    
+       }
 
-        let imagenProducto = req.file.filename;
+       productos.create(
+        crearProducto
+       )
+       .then((result) => {
+        return res.redirect("/")
+       })
       
     },
 }

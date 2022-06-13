@@ -27,8 +27,8 @@ const productController = require('../controllers/productController');
 
 router.get('/detalle/:id', productController.producto);
 
-router.get ('/add', productController.agregarProducto);
+router.get('/add', productController.create);
 
-router.post ('/add', upload.single('imagenProducto'), productController.agregarProducto)
+router.post('/add', upload.single('imagenProducto'), productController.store)
 
 module.exports = router; 
