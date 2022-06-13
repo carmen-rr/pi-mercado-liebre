@@ -24,41 +24,34 @@ const indexController = {
     //RUTA DE SEARCH 
     search:  function(req,res) {
       let palabraBuscada = req.query.search;
-      productos.findOne({
-        where:[ 
-           // {nombre: {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
-            {descripcion:{[op.like] :  "%"+ palabraBuscada +"%"}  }    //descripcion
-
-                    ]
-      })
+      let filtro = {
+              where : {
+              [op.or]: [
+                { nombre: { [op.like]: `%${palabraBuscada}%`} },
+                { descripcion: { [op.like]: `%${palabraBuscada}%`} }
+              ]
+            }
+       };
+      productos.findAll(filtro)
       .then((result) => {
-        return res.send(result)
+       // return res.render('search-results')
+      // return res.send(result)
+      console.log(result);
+      return res.render('search-results', {
+        busqueda : result,
+        palabraBuscada : palabraBuscada
+        
       })
-     
-      } ,
-
-      /*
-      //PROMESA DE NOBRE DE PRODUCTO 
-      let nombrePromesa =  productos.findAll({
-        where:[ 
-           {nombre : {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
-
-                    ]
-      })
-      //PROMESA DE DESCRIPCION DE PRODUCTO 
-      let descripcionPromesa =  productos.findAll({
-        where:[ 
-           {descripcion : {[op.like] : "%"+ palabraBuscada +"%"} },    //nombre
-
-                    ]
+       })
+      .catch(function(error) {
+        console.log(error);
       })
 
-      Promise.all([nombrePromesa, descripcionPromesa])
-      //callback que recibe un array con los resultados de las promesas 
-      .then(function ([resultadoNombre, resultadoDescripcion]){
-        console.log(resultadoNombre, resultadoDescripcion)
-      }) */
+      },
+    
+    
 
+    
 
     //RUTA DE LOGIN 
     loginCreate:  function (req,res){
@@ -95,5 +88,6 @@ const indexController = {
       }, 
 
 }; 
+
 
 module.exports = indexController; 

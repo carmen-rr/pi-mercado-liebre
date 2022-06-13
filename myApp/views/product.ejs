@@ -3,16 +3,16 @@
 
 <!-- Include Head -->
 
-<% if (locals.users != undefined) { %>
-	<%- include('./partials/headerLogueado')%> 
-<% } else { %>
-	<%- include('./partials/headerNot')%> 
-<% } %> 
+<%- include('./partials/head') %> 
 
 <body>
 	<!-- Header -->
 
-	<%- include('./partials/headerNot')%> 
+	<% if (locals.users != undefined) { %>
+		<%- include('./partials/headerLogueado')%> 
+	<% } else { %>
+		<%- include('./partials/headerNot')%> 
+	<% } %>  
 
 	<!-- /Header -->
 
