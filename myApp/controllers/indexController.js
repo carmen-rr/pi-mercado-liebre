@@ -78,8 +78,14 @@ const indexController = {
        
         .then((result) => {
           if (result != null) {
-           
+
             let claveCorrecta =  bcryptjs.compareSync(info.contrasenia, result.contrasenia)
+          
+            if (claveCorrecta){
+              return res.send ("Existe el mail" + result.email + " y la clave tambien es correcta")
+            } else {
+              return res.send ("Existe el mail" + result.email + " pero la clave es incorrecta")
+            }
             
             return res.send("Existe el mail " + result.email)
          
