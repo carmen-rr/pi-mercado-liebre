@@ -14,7 +14,7 @@ const indexController = {
     index: (req, res) => {
       productos.findAll({
 
-        order: [[ "createdAt" , "DESC"]]
+        order: [[ "created_at" , "DESC"]]
       })
       .then((result) => {
         return res.render('index', {productos : result})
@@ -24,6 +24,8 @@ const indexController = {
     //RUTA DE SEARCH 
     search:  function(req,res) {
       let palabraBuscada = req.query.search;
+      console.log(req.query.search)
+      console.log(typeof palabraBuscada);
       let filtro = {
               where : {
               [op.or]: [
@@ -69,6 +71,7 @@ const indexController = {
 
     registerStore:  function (req,res){
       let info = req.body; //guardando los datos del forms
+      console.log(req.body)
       let usuarioCreado = { //creando el usuario 
 
         usuario : info.usuario, 
@@ -76,7 +79,7 @@ const indexController = {
         email: info.email, 
         fechaDeNacimiento: info.fechaDeNacimiento, 
         dni: info.dni, 
-        fotoDePerfil: info.fotoDePerfil,
+        fotoDePerfil: req.file.filename,
 
       }
       usuario.create(
@@ -84,10 +87,11 @@ const indexController = {
       )
       .then((result) =>{
         return res.redirect("/user/profile")
-      })
+      }).catch(err =>{console.log(err)})
       }, 
 
 }; 
+
 
 
 module.exports = indexController; 

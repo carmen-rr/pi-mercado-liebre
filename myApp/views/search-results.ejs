@@ -20,43 +20,38 @@
 		<div class="row">
 			<div class="col-12">
 
-			<% if (palabraBuscada != undefined) { %>
+			
+
+			<% if (busqueda.length < 1) { %>
 				<h1 class="products-title">No hay resultados de búsqueda para <strong><%= palabraBuscada %> </strong></h1>
-				<% } else if (palabraBuscada = '') { %>
-					<h1 class="products-title">Debe </strong></h1>
-		
+				<% } else if (palabraBuscada.length == 0) { %>
+					<h1 class="products-title">Debe ingresar algo en el campo de busqueda</strong></h1>
 				<% } else { %>
 				<h1 class="products-title">Resultados de búsqueda para <strong><%= palabraBuscada %> </strong></h1>
+				<% for( let i = 0; i < busqueda.length; i++ ) { %>
 
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a class= "hipervinculo" href="/product/detalle/<%= busqueda[i].id %>">
+								<figure class="product-box_image">
+								 <img src='/images/products/<%= busqueda[i].imagen %>' alt="producto"> 
+								</figure>
+								<article class="product-box_data">
+									<a href="/product/detalle/<%= busqueda[i].id %>"><h2><%= busqueda[i].nombre %></h2></a> 
+									<p><%= busqueda[i].descripcion %></p>
+									<p><%= busqueda[i].created_at %></p>
+								</article>
+							</a>
+						</section>
+					</div>
+					
+					<% } %>
 			<% } %> 
-
-	
 			</div>
 			<!-- Show the "ultimos" products -->
 			<!-- <h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
 			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////-->
-			</h2>
-			
-						
-						<% for( let i = 0; i < busqueda.length; i++ ) { %>
-
-							<div class="col-12 col-sm-6 col-lg-3">
-								<section class="product-box">
-									<a class= "hipervinculo" href="/product/detalle/<%= busqueda[i].id %>">
-										<figure class="product-box_image">
-										 <img src='/images/products/<%= busqueda[i].imagen %>' alt="producto"> 
-										</figure>
-										<article class="product-box_data">
-											<a href="/product/detalle/<%= busqueda[i].id %>"><h2><%= busqueda[i].nombre %></h2></a> 
-											<p><%= busqueda[i].descripcion %></p>
-											<p><%= busqueda[i].createdAt %></p>
-										</article>
-									</a>
-								</section>
-							</div>
-							
-							<% } %>
+			////////////////</h2>-->
 
 					
 					

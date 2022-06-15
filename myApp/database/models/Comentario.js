@@ -13,12 +13,18 @@ let cols = { //ol que tiene todas las columnas de la tabla
         textoDeComentario: {
                 type: dataTypes.STRING
             }, 
+         id_usuario: {
+                 type: dataTypes.INTEGER,
+            },
+        id_producto: {
+                type: dataTypes.INTEGER,
+          },
 
-        createdAt: {
+        created_at: {
                 type: dataTypes.DATE
             }, 
 
-        updatedAt: {
+        updated_at: {
                 type: dataTypes.DATE
             }
         }; 

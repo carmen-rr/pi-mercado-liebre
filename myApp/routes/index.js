@@ -1,7 +1,26 @@
 var express = require('express');
 var router = express.Router();
 
-const indexController = require('../controllers/indexController')  
+//requeriendo módulos de multer y path
+const multer = require('multer');
+const path = require('path');
+
+const indexController = require('../controllers/indexController')
+
+
+//configurando multer
+
+let storage = multer.diskStorage({
+    destination : function (req , file , cb) {
+      cb( null, path.join (__dirname , '../public/images/users' ) )  
+    },
+    filename : function (req, file, cb) {
+      cb( null , file.fieldname + '-' + Date.now () + path.extname(file.originalname) )
+    },
+
+});
+
+let upload = multer({storage: storage})  
  
 
 router.get ('/search', indexController.search); 
@@ -13,8 +32,10 @@ router.get('/login', indexController.loginCreate);  //me muestra el formulario p
 
 //RUTAS DE RESGISTER
 router.get('/register', indexController.registerCreate);  //me muestra el formulario para que pueda cargar la info 
+router.post('/register',upload.single('fotoDePerfil'), indexController.registerStore);  //capturar la informacion del formulario
 
-    router.post('/register', indexController.registerStore);  //capturar la informacion del formulario 
+
+
 
 
 /* GET home page. */

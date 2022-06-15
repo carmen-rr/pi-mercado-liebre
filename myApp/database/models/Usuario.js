@@ -45,11 +45,11 @@ module.exports = function (sequelize, dataTypes){
                     type: dataTypes.STRING
                 },
     
-            createdAt: {
+            created_at: {
                     type: dataTypes.DATE
                 }, 
     
-            updatedAt: {
+            updated_at: {
                     type: dataTypes.DATE
                 }
     
@@ -58,7 +58,7 @@ module.exports = function (sequelize, dataTypes){
     let config = {
             tableName: 'usuario', 
             timestamps: true, //Si la tabla tiene los campos created_at y updated_at
-            underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
+            underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
          }
     
          const Usuario = sequelize.define(alias, cols, config); 
@@ -86,7 +86,8 @@ module.exports = function (sequelize, dataTypes){
 
                 otherKey: "id_usuario_seguido", 
 
-                timestamps: false
+                timestamps: true,
+                underscored: true, 
             });
         }
 
