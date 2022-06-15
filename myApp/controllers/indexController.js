@@ -61,7 +61,7 @@ const indexController = {
       }, 
 
      loginStore:  function (req,res){
-
+//
       // let info = req.body; 
 
       // return res.send(info.email)},
