@@ -66,3 +66,39 @@ const indexController = {
 }; 
 
 module.exports = indexController; */
+
+
+
+//// HUSHING ////
+/*
+
+registerStore:  function (req,res){
+      let info = req.body; //guardando los datos del forms
+      let passEncriptada = bcrypt.hashSync('info.contrasenia', 10);
+      
+      let usuarioCreado = { //creando el usuario 
+
+        usuario : info.usuario, 
+        contrasenia: passEncriptada, //HASHING aca vamos a usar bcrypt con la pass encriptada
+        email: info.email, 
+        fechaDeNacimiento: info.fechaDeNacimiento, 
+        dni: info.dni, 
+        fotoDePerfil: req.file.filename,
+
+      }
+      usuario.create(
+        usuarioCreado
+      )
+      .then((result) =>{
+        return res.redirect("/user/profile")
+      }).catch(err =>{console.log(err)})
+      }, 
+
+};
+
+
+
+
+
+
+*/

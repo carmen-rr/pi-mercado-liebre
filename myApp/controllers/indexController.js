@@ -1,7 +1,10 @@
 const db = require("../db/data");
 const data = require("../database/models");
 const op = data.Sequelize.Op; 
-//const bcryptjs = require ('bcryptjs')
+
+/*Requeriendo el modulo de bcryptjs*/
+const bcryptjs = require("bcryptjs");
+
 
 
 const productos = data.Producto; 
@@ -51,9 +54,6 @@ const indexController = {
 
       },
     
-    
-
-    
 
     //RUTA DE LOGIN 
     loginCreate:  function (req,res){
@@ -71,7 +71,7 @@ const indexController = {
 
     registerStore:  function (req,res){
       let info = req.body; //guardando los datos del forms
-      console.log(req.body)
+      
       let usuarioCreado = { //creando el usuario 
 
         usuario : info.usuario, 
@@ -90,7 +90,7 @@ const indexController = {
       }).catch(err =>{console.log(err)})
       }, 
 
-}; 
+};
 
 
 
