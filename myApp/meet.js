@@ -69,7 +69,7 @@ module.exports = indexController; */
 
 
 
-//// HUSHING ////
+//// HUSHING DE REGISTER ////
 /*
 
 registerStore:  function (req,res){
@@ -96,9 +96,21 @@ registerStore:  function (req,res){
 
 };
 
+//PROCESANDO LOGIN//
+ 
+  loginStore:  function (req,res){
+    
+    let info = req.body;
 
-
-
-
+     usuario.findOne({
+      where : [{ email : info.email }]
+     }).then(result) => {
+      if (condition) {
+        
+      }
+     };
+    
+    return res.render('login')
+      }, 
 
 */

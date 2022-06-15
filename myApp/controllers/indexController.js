@@ -61,6 +61,28 @@ const indexController = {
       }, 
 
      loginStore:  function (req,res){
+        
+      /*let info = req.body;
+        
+       usuario.findOne({
+        where : [{ email : info.email }]
+       })
+       
+        .then((result) => {
+          if (result != null) {
+           
+            let claveCorrecta =  bcryptjs.compareSync(info.contrasenia, result.contrasenia)
+            
+            return res.send("Existe el mail " + result.email)
+         
+          } else {
+
+            return res.sen("No existe el mail " + info.email)
+          
+          }
+       });
+
+      */
         return res.render('login')
       }, 
 
@@ -72,10 +94,12 @@ const indexController = {
     registerStore:  function (req,res){
       let info = req.body; //guardando los datos del forms
       
+      //let passEncriptada = bcrypt.hashSync('info.contrasenia', 10);
+      
       let usuarioCreado = { //creando el usuario 
 
         usuario : info.usuario, 
-        contrasenia: info.contrasenia, //HASHING aca vamos a usar bcrypt con la pass encriptada
+        contrasenia: info.contrasenia, // passEncriptada,
         email: info.email, 
         fechaDeNacimiento: info.fechaDeNacimiento, 
         dni: info.dni, 
