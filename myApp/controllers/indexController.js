@@ -61,7 +61,15 @@ const indexController = {
       }, 
 
      loginStore:  function (req,res){
+
+      // let info = req.body; 
+
+      // return res.send(info.email)},
         
+      //let loginHash = bcrypt.compareSync('info.contrasenia, passEncriptada')
+      //console.log(loginHash)
+
+
       /*let info = req.body;
         
        usuario.findOne({
@@ -104,6 +112,7 @@ const indexController = {
         fechaDeNacimiento: info.fechaDeNacimiento, 
         dni: info.dni, 
         fotoDePerfil: req.file.filename,
+        //remeber_token: 
 
       }
       usuario.create(
