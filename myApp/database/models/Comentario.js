@@ -13,18 +13,18 @@ let cols = { //ol que tiene todas las columnas de la tabla
         textoDeComentario: {
                 type: dataTypes.STRING
             }, 
-         id_usuario: {
+         idUsuario: {
                  type: dataTypes.INTEGER,
             },
-        id_producto: {
+        idProducto: {
                 type: dataTypes.INTEGER,
           },
 
-        created_at: {
+        createdAt: {
                 type: dataTypes.DATE
             }, 
 
-        updated_at: {
+        updatedt: {
                 type: dataTypes.DATE
             }
         }; 
@@ -32,7 +32,7 @@ let cols = { //ol que tiene todas las columnas de la tabla
 let config = {
     tableName: 'comentarios', //asi es como se llama en sql, esta bien?
     timestamps: true, 
-    underscored: true, 
+    underscored: false, 
      }; 
 
      const Comentario = sequelize.define(alias, cols, config); 
@@ -40,13 +40,13 @@ let config = {
     Comentario.associate = function (models){ 
         Comentario.belongsTo(models.Usuario, {
             as:"usuario_comentarios", //la relacion de usuario y comentario 
-            foreignKey:"id_usuario"
+            foreignKey:"idUsuario"
         });}
 
     Comentario.associate = function (models){ 
         Comentario.belongsTo(models.Producto, {
             as:"producto_comentarios", //la relacion de producto y comentarios 
-            foreignKey:"id_producto"
+            foreignKey:"idProducto"
         });}
 
     return Comentario; 

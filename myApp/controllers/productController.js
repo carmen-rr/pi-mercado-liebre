@@ -42,7 +42,7 @@ const productController = {
         imagen: imagenNombre,
         nombre: info.nombre,
         descripcion: info.descripcion, 
-        id_usuario :  1// req.session.user.id   
+        idUsuario :  1// req.session.user.id   
        }
 
        productos.create(

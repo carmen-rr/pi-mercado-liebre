@@ -17,7 +17,7 @@ const indexController = {
     index: (req, res) => {
       productos.findAll({
 
-        order: [[ "created_at" , "DESC"]]
+        order: [[ "createdAt" , "DESC"]]
       })
       .then((result) => {
         return res.render('index', {productos : result})

@@ -22,15 +22,15 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING
         },
 
-        id_usuario: {
+        idUsuario: {
             type: dataTypes.INTEGER,
         },
 
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
 
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         }
 
@@ -39,7 +39,7 @@ module.exports = function (sequelize, dataTypes) {
     let config = {
         tableName: 'producto',
         timestamps: true,
-        underscored: true,
+        underscored: false,
     };
 
     const Producto = sequelize.define(alias, cols, config);
@@ -47,14 +47,14 @@ module.exports = function (sequelize, dataTypes) {
     Producto.associate = function (models) {
         Producto.belongsTo(models.Usuario, {
             as: "usuario_producto", //la relacion de usuario y producto 
-            foreignKey: "id_usuario"
+            foreignKey: "idUsuario"
         });
     }
 
     Producto.associate = function (models) {
         Producto.hasMany(models.Comentario, {
             as: "comentario_producto", //la relacion de producto y comentarios 
-            foreignKey: "id_producto"
+            foreignKey: "idProducto"
         });
     }
 

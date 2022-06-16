@@ -45,11 +45,11 @@ module.exports = function (sequelize, dataTypes){
                     type: dataTypes.STRING
                 },
     
-            created_at: {
+            createdAt: {
                     type: dataTypes.DATE
                 }, 
     
-            updated_at: {
+            updatedAt: {
                     type: dataTypes.DATE
                 }
     
@@ -57,8 +57,8 @@ module.exports = function (sequelize, dataTypes){
     
     let config = {
             tableName: 'usuario', 
-            timestamps: true, //Si la tabla tiene los campos created_at y updated_at
-            underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
+            timestamps: true, //Si la tabla tiene los campos CreatedAt y updatedAt
+            underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
          }
     
          const Usuario = sequelize.define(alias, cols, config); 
@@ -67,13 +67,13 @@ module.exports = function (sequelize, dataTypes){
          Usuario.associate = function (models){ 
              Usuario.hasMany(models.Producto, {
                  as:"producto_usuario", //la relacion de usuario y producto 
-                 foreignKey:"id_usuario"
+                 foreignKey:"idUsuario"
              });}
 
          Usuario.associate = function (models){ 
             Usuario.hasMany(models.Comentario, {
                 as:"comentarios_usuario", //la relacion de usuario y comentario 
-                foreignKey:"id_usuario"
+                foreignKey:"idUsuario"
                 });}
 
         Usuario.associate = function (models){ 
@@ -82,12 +82,12 @@ module.exports = function (sequelize, dataTypes){
 
                 through: "seguidores", 
 
-                foreignKey:"id_usuario_seguidor", 
+                foreignKey:"idUsuarioSeguidor", 
 
-                otherKey: "id_usuario_seguido", 
+                otherKey: "idUsuarioSeguidor", 
 
                 timestamps: true,
-                underscored: true, 
+                underscored: false, 
             });
         }
 
