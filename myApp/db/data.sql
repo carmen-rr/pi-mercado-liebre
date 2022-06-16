@@ -8,7 +8,7 @@ CREATE TABLE usuario (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
     email 				VARCHAR(60) 		 NOT NULL, 
     usuario 			VARCHAR(30)			 NOT NULL, 
-    contrasenia 		VARCHAR(50) 		 NOT NULL, 
+    contrasenia 		VARCHAR(100) 		 NOT NULL, 
     fechaDeNacimiento	DATE 				 NOT NULL, 
     dni 				INT 				 NOT NULL, 
     fotoDePerfil 		VARCHAR(300) 				 , 
