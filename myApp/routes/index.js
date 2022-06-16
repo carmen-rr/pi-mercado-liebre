@@ -27,8 +27,7 @@ router.get ('/search', indexController.search);
 
 //RUTAS DE LOGIN 
 router.get('/login', indexController.loginCreate);  //me muestra el formulario para que pueda cargar la info 
-
-    //router.post ('/login', indexController.loginStore) //capturar la informacion del formulario 
+router.post ('/login', indexController.loginStore) //capturar la informacion del formulario 
 
 //RUTAS DE RESGISTER
 router.get('/register', indexController.registerCreate);  //me muestra el formulario para que pueda cargar la info 
