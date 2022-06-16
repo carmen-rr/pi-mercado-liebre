@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+/*REQUERIMOS EXPRESS-SESSION*/
+//const session = require('express-session'); 
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
@@ -29,6 +31,13 @@ app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 
+/*UTILIZAMOS EL MIDDLEWARE DE SESSION (funcion en medio de una solicitud y respuesta) DESPUES DE APP*/
+/*app.use(session({
+    secret: 'myApp', 
+    resave: false, 
+    saveUninitialized: true
+
+}))*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
