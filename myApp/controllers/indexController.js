@@ -118,6 +118,9 @@ const indexController = {
         fechaDeNacimiento: info.fechaDeNacimiento, 
         dni: info.dni, 
         fotoDePerfil: req.file.filename,
+        seguidores: 0, //porque esta comenzando y no hay seguidores
+        comentarios: 0, 
+        
         //remeber_token: 
 
       }

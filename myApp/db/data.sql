@@ -13,7 +13,7 @@ CREATE TABLE usuario (
     dni 				INT 				 NOT NULL, 
     fotoDePerfil 		VARCHAR(300) 				 , 
     cantidadDeProducto 	INT 						 , 
-    seguidores			INT 				 NOT NULL, 
+    seguidores			INT 				 NULL, 
     comentarios 		INT, 			     
     createdAt          DATE                NULL,
     updatedAt          DATE                NULL
