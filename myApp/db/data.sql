@@ -7,7 +7,7 @@ USE forever31_db;
 CREATE TABLE usuario (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
     email 				VARCHAR(60) 		 NOT NULL    UNIQUE, 
-    usuario 			VARCHAR(30)			 NOT NULL, 
+    usuario 			VARCHAR(30)			 NOT NULL    UNIQUE, 
     contrasenia 		VARCHAR(100) 		 NOT NULL, 
     fechaDeNacimiento	DATE 				 NOT NULL, 
     dni 				INT 				 NOT NULL, 
