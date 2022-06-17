@@ -41,24 +41,23 @@ app.use(session({
     resave: false, 
     saveUninitialized: true
 
-}))
+}));
 
-/*CREAMOS EL MIDDLEWARE DE SESSION GUARDADO EN LOCALS
+/*CREAMOS EL MIDDLEWARE DE SESSION GUARDADO EN LOCALS*/
 app.use(function(req, res, next) {
-  if (req.session.user != undefined) {
-  res.locals.user = req.session.user
+  if (req.session.user != undefined) { 
+  res.locals.user = req.session.user; 
   }
   return next();
   });
-  */
-
-  /*CREANDO EL MIDDLEWARE DE COOKIES */
-  /*
+  
+  /*CREANDO EL MIDDLEWARE DE COOKIES 
+  
   app.use(function(req, res, next) {
-  if (req.cookies.idUser != undefined && req.session.user = undefined){
+  if (req.cookies.idUser != undefined && req.session.user == undefined){
     let idUserEnCookie = req.cookies.idUser
 
-    db.User.findByPk(idUserEnCookie)
+    db.Usuario.findByPk(idUserEnCookie)
     .then((user) => {
       req.session.user = user.dataValues; 
       res.locals.user = user.dataValues; 
@@ -73,9 +72,7 @@ app.use(function(req, res, next) {
     return next();
 }
 })
-
-  */
-
+*/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

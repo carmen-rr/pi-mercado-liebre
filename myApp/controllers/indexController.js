@@ -60,6 +60,18 @@ const indexController = {
             let claveCorrecta =  bcryptjs.compareSync (info.contrasenia, result.contrasenia)
             if (claveCorrecta){
 
+              req.session.user = result.dataValues; //traemos la info y guardandola en session
+              console.log(req.session.user);  //ver la info que almaceno 
+              return res.send ("Existe el mail " + result.email + " y la clave es correcta")
+              //return redirect("/profile")
+
+
+
+              //if (req.body.remember != undefined) {
+              //  res.cookie('id', result.dataValues.idUser, { maxAge: 1000 * 60 * 5 });
+              // }
+
+
               /*P SESSION  */
              //req.session.user = result.dataValues;
              // console.log(req.session.user); 
@@ -70,14 +82,21 @@ const indexController = {
             //    res.cookie('idUser', req.session.user.id, { maxAge: 1000 * 60 * 5 });
             //  }
 
-              return res.send ("Existe el mail " + result.email + " y la clave tambien es correcta") // acá iria un res.redirect
             } else {
               return res.send ("Existe el mail " + result.email + " pero la clave es incorrecta")
             }
+
+          } else {
+            return res.send("No existe este mail " +  info.email);
           }
-       });
-       // return res.render('login')
+        })
+        .catch(function(error){
+          console.log(error);
+        
+        })        
       },
+
+
     //RUTA DE REGISTER
       registerCreate:  function (req,res){
         return res.render('register')
