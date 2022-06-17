@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 /*REQUERIMOS EXPRESS-SESSION*/
-//const session = require('express-session'); 
+const session = require('express-session');
+
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
@@ -32,12 +33,21 @@ app.use('/user', userRouter);
 app.use('/product', productRouter);
 
 /*UTILIZAMOS EL MIDDLEWARE DE SESSION (funcion en medio de una solicitud y respuesta) DESPUES DE APP*/
-/*app.use(session({
+app.use(session({
     secret: 'myApp', 
     resave: false, 
     saveUninitialized: true
 
-}))*/
+}))
+
+/*CREAMOS EL MIDDLEWARE DE SESSION GUARDADO EN LOCALS
+app.use(function(req, res, next) {
+  if (req.session.user != undefined) {
+  res.locals.user = req.session.user
+  }
+  return next();
+  });
+  */
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

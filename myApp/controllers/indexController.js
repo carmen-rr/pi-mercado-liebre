@@ -55,9 +55,10 @@ const indexController = {
         .then((result) => {
           if (result != null) {
             let claveCorrecta =  bcryptjs.compareSync (info.contrasenia, result.contrasenia)
-            console.log(info.contrasenia)
             if (claveCorrecta){
-              return res.send ("Existe el mail " + result.email + " y la clave tambien es correcta")
+              req.session.usuario = result.dataValues;
+              console.log(req.session.usuario);
+              //return res.send ("Existe el mail " + result.email + " y la clave tambien es correcta") // acá iria un res.redirect
             } else {
               return res.send ("Existe el mail " + result.email + " pero la clave es incorrecta")
             }
