@@ -1,11 +1,14 @@
 const db = require("../db/data");
 const data = require("../database/models");
 const op = data.Sequelize.Op;
+
 /*Requeriendo el modulo de bcryptjs*/
 const bcryptjs = require("bcryptjs");
+
 const productos = data.Producto;
 const comentarios = data.Comentario;
 const usuario = data.Usuario;
+
 const indexController = {
     //INDEX
     index: (req, res) => {
@@ -52,13 +55,22 @@ const indexController = {
        usuario.findOne({
         where : [{ email : info.email }]
        })
-        .then((result) => {
+        .then((result) => { //el result es la informacion del usuario de la db (ol con propiedades)
           if (result != null) {
             let claveCorrecta =  bcryptjs.compareSync (info.contrasenia, result.contrasenia)
             if (claveCorrecta){
-              req.session.usuario = result.dataValues;
-              console.log(req.session.usuario);
-              //return res.send ("Existe el mail " + result.email + " y la clave tambien es correcta") // acá iria un res.redirect
+
+              /*P SESSION  */
+             //req.session.user = result.dataValues;
+             // console.log(req.session.user); 
+             //return res.redirect("/user/profile")
+
+              /*EVALUANDO CHECKBOX */
+            //  if (req.body.remember != undefined) {
+            //    res.cookie('idUser', req.session.user.id, { maxAge: 1000 * 60 * 5 });
+            //  }
+
+              return res.send ("Existe el mail " + result.email + " y la clave tambien es correcta") // acá iria un res.redirect
             } else {
               return res.send ("Existe el mail " + result.email + " pero la clave es incorrecta")
             }

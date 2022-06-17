@@ -6,6 +6,9 @@ var logger = require('morgan');
 /*REQUERIMOS EXPRESS-SESSION*/
 const session = require('express-session');
 
+/*REQUIRIENDO LOS MODELOS EN EL ENTRY POINT */
+const data = require("./database/models");
+
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
@@ -47,6 +50,30 @@ app.use(function(req, res, next) {
   }
   return next();
   });
+  */
+
+  /*CREANDO EL MIDDLEWARE DE COOKIES */
+  /*
+  app.use(function(req, res, next) {
+  if (req.cookies.idUser != undefined && req.session.user = undefined){
+    let idUserEnCookie = req.cookies.idUser
+
+    db.User.findByPk(idUserEnCookie)
+    .then((user) => {
+      req.session.user = user.dataValues; 
+      res.locals.user = user.dataValues; 
+      
+      return next();
+
+    }) .catch ((error) => {
+      console.log(error); 
+    })
+
+  }else{
+    return next();
+}
+})
+
   */
 
 // catch 404 and forward to error handler
