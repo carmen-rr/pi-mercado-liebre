@@ -33,6 +33,10 @@ router.post ('/login', indexController.loginStore) //capturar la informacion del
 router.get('/register', indexController.registerCreate);  //me muestra el formulario para que pueda cargar la info 
 router.post('/register',upload.single('fotoDePerfil'), indexController.registerStore);  //capturar la informacion del formulario
 
+//RUTA LOGOUT
+router.post ('/logOut', indexController.logOut)
+
+
 
 
 

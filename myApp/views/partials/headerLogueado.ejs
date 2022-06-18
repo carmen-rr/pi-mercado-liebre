@@ -40,19 +40,19 @@
 	
 				<ul class="right-navbar">
 					<li><a class= "hipervinculo" href="/user/profile">
-						<%= dataUsuario.usuario%> <i class="fas fa-user"></i>
+						<%= user.usuario%> <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
 						
 						
-						<!-- <form action="" method="post"> --> 
-							<button class="logout" type="submit">
-								<a class= "hipervinculo" href="/">Cerrar sesión<i class="fas fa-sign-in-alt"></i></a>
+						<form action="/logOut" method="post"> 
+							<button class="logOut" type="submit">
+								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 								
 							</button>
 
-						<!-- </form> -->	
+						</form> 	
 						
 					</li>
 					<!-- Solo deslogueado 
@@ -67,8 +67,8 @@
 			</nav>
 
 
-			<% if (locals.usuario != undefined) { %>
-				<p>Bienvenido,✨ <%= usuario.usuario %> ✨ </p>  <!--nombre del usuario porque en la db se llama usuario-->
+			<% if (locals.user != undefined) { %>
+				<p>Bienvenido,✨ <%= user.usuario %> ✨ </p>  <!--nombre del usuario porque en la db se llama usuario-->
 			<% } %>
  
 	

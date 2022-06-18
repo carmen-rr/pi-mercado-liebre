@@ -16,6 +16,7 @@ const indexController = {
         order: [[ "createdAt" , "DESC"]]
       })
       .then((result) => {
+        console.log(result)
         return res.render('index', {productos : result})
       })
       },
@@ -90,8 +91,8 @@ const indexController = {
     //RUTA DE REGISTER
       registerCreate:  function (req,res){
         return res.render('register')
-       },
-    registerStore:  function (req,res){
+      },
+      registerStore:  function (req,res){
       let info = req.body; //guardando los datos del forms
       let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
       let usuarioCreado = { //creando el usuario
@@ -113,7 +114,13 @@ const indexController = {
       .then((result) =>{
         return res.redirect("/user/profile")
       })//.catch(err =>{console.log(err)})
-    },
+      },
+      logOut:  function (req,res){
+        req.session.destroy();
+        res.clearCookie('idUser');
+        return res.render('login')
+      },
+
 };
 module.exports = indexController;
 
