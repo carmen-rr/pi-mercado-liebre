@@ -61,25 +61,16 @@ const indexController = {
             if (claveCorrecta){
 
               req.session.user = result.dataValues; //traemos la info y guardandola en session
-              console.log(req.session.user);  //ver la info que almaceno 
+              //console.log(req.session.user);  //ver la info que almaceno 
               //return res.send ("Existe el mail " + result.email + " y la clave es correcta")
+
+
+                /*EVALUANDO CHECKBOX, si checkbox esta en true */
+              if (req.body.remember != undefined) {
+                res.cookie('idUser', req.session.user.id, { maxAge: 1000 * 60 * 5 }); //quiero almacenar el id del usuario
+                }
+
               return res.redirect("/user/profile")
-
-
-              //if (req.body.remember != undefined) {
-              //  res.cookie('id', result.dataValues.idUser, { maxAge: 1000 * 60 * 5 });
-              // }
-
-
-              /*P SESSION  */
-             //req.session.user = result.dataValues;
-             // console.log(req.session.user); 
-             //return res.redirect("/user/profile")
-
-              /*EVALUANDO CHECKBOX */
-            //  if (req.body.remember != undefined) {
-            //    res.cookie('idUser', req.session.user.id, { maxAge: 1000 * 60 * 5 });
-            //  }
 
             } else {
               return res.send ("Existe el mail " + result.email + " pero la clave es incorrecta")

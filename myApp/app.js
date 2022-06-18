@@ -47,18 +47,12 @@ res.locals.user = req.session.user;
 return next();
 });
 
-app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/product', productRouter);
-
-
-  /*CREANDO EL MIDDLEWARE DE COOKIES 
-  
+  //CREANDO EL MIDDLEWARE DE COOKIES 
   app.use(function(req, res, next) {
   if (req.cookies.idUser != undefined && req.session.user == undefined){
     let idUserEnCookie = req.cookies.idUser
 
-    db.Usuario.findByPk(idUserEnCookie)
+    data.Usuario.findByPk(idUserEnCookie)
     .then((user) => {
       req.session.user = user.dataValues; 
       res.locals.user = user.dataValues; 
@@ -72,8 +66,12 @@ app.use('/product', productRouter);
   }else{
     return next();
 }
-})
-*/
+}); 
+
+app.use('/', indexRouter);
+app.use('/user', userRouter);
+app.use('/product', productRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
