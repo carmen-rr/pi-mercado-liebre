@@ -49,7 +49,14 @@ const indexController = {
       },
       //RUTA DE LOGIN
       loginCreate:  function (req,res){
-        return res.render('login')
+        
+        //Hago que no se pueda entrar a profile estando logueado
+        if (req.session.user != undefined) {
+          return res.render('index')
+      } else {
+          return res.render('login')
+      }
+
       },
       loginStore:  function (req,res){
        let info = req.body;

@@ -32,7 +32,14 @@ const productController = {
     //RUTA PRODUCT-ADD.
     
     create: (req, res) => {
-        return res.render('product-add');
+        //Hago que solo se pueda acceder estando logueado
+
+ if (req.session.user != undefined) {
+            return res.render('product-add')
+        } else {
+            return res.render('login')
+        }
+
     },
     
     store: (req, res) => {
@@ -53,6 +60,8 @@ const productController = {
        })
       
     },
+    //Evaluamos que el usaurio este en sesion para poder acceder.
+    
 }
 
 

@@ -12,21 +12,23 @@ const userController = {
 
     //RUTA DE PROFILE 
     profile: function(req,res){
-        return res.render('profile', {
-
-          dataUsuario: db.usuario, 
-          dataProducto: db.producto,
-          
-        })
+      if (req.session.user != undefined) {
+        return res.render('product-add')
+    } else {
+        return res.render('login')
+    }         
+        
       }, 
 
     //RUTA DE PROFILE-EDIT  
     profileEdit:  function(req,res){
-      return res.render('profile-edit', {
+      if (req.session.user != undefined) {
+        return res.render('profile-edit')
+    } else {
+        return res.render('login')
+    }
 
-        dataUsuario: db.usuario, 
-      
-      })
+
     },  
 }; 
 
