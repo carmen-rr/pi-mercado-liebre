@@ -31,26 +31,27 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/product', productRouter);
-
 /*UTILIZAMOS EL MIDDLEWARE DE SESSION (funcion en medio de una solicitud y respuesta) DESPUES DE APP*/
 app.use(session({
-    secret: 'myApp', 
-    resave: false, 
-    saveUninitialized: true
+  secret: 'myApp', 
+  resave: false, 
+  saveUninitialized: true
 
 }));
 
 /*CREAMOS EL MIDDLEWARE DE SESSION GUARDADO EN LOCALS*/
 app.use(function(req, res, next) {
-  if (req.session.user != undefined) { 
-  res.locals.user = req.session.user; 
-  }
-  return next();
-  });
-  
+if (req.session.user != undefined) { 
+res.locals.user = req.session.user; 
+}
+return next();
+});
+
+app.use('/', indexRouter);
+app.use('/user', userRouter);
+app.use('/product', productRouter);
+
+
   /*CREANDO EL MIDDLEWARE DE COOKIES 
   
   app.use(function(req, res, next) {

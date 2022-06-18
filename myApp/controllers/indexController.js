@@ -63,7 +63,7 @@ const indexController = {
               req.session.user = result.dataValues; //traemos la info y guardandola en session
               console.log(req.session.user);  //ver la info que almaceno 
               //return res.send ("Existe el mail " + result.email + " y la clave es correcta")
-              //return redirect("/user/profile")
+              return res.redirect("/user/profile")
 
 
               //if (req.body.remember != undefined) {
@@ -121,8 +121,8 @@ const indexController = {
       )
       .then((result) =>{
         return res.redirect("/user/profile")
-      }).catch(err =>{console.log(err)})
-      },
+      })//.catch(err =>{console.log(err)})
+    },
 };
 module.exports = indexController;
 
