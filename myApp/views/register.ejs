@@ -27,6 +27,10 @@
 						<div class="app-title">
 							<h1 class="forms-h1">Registrate</h1>
 						</div>
+
+						<% if(locals.errors){ %>
+							<p> <%=errors.message  %> </p>
+						<% } %> 
 			
 						<div class="login-form">
 							<div class="control-group">

@@ -92,7 +92,9 @@ const indexController = {
       registerCreate:  function (req,res){
         return res.render('register')
       },
+      
       registerStore:  function (req,res){
+      
       let info = req.body; //guardando los datos del forms
       let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
       let usuarioCreado = { //creando el usuario
@@ -108,12 +110,23 @@ const indexController = {
         //remeber_token: 
 
       }
+      
+      //Validacion de formularios con el campo email de Register
+       let errors ={}; 
+        if(req.body.email == ''){ //chequa que el mail no este vacio
+          errors.message = 'Email no puede estar vacio';
+          res.locals.errors = errors;
+          return res.render('register');
+          }
+      
+
       usuario.create(
         usuarioCreado
       )
       .then((result) =>{
         return res.redirect("/user/profile")
       })//.catch(err =>{console.log(err)})
+
       },
       logOut:  function (req,res){
         req.session.destroy();
