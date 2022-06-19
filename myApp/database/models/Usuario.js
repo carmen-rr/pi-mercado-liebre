@@ -66,19 +66,19 @@ module.exports = function (sequelize, dataTypes){
         //UN USUARIO (1) PERTENECE A MUCHOS PRODUCTOS (N)
          Usuario.associate = function (models){ 
              Usuario.hasMany(models.Producto, {
-                 as:"producto_usuario", //la relacion de usuario y producto 
+                 as:"productoUsuario", //la relacion de usuario y producto 
                  foreignKey:"idUsuario"
              });}
 
          Usuario.associate = function (models){ 
             Usuario.hasMany(models.Comentario, {
-                as:"comentarios_usuario", //la relacion de usuario y comentario 
+                as:"comentariosUsuario", //la relacion de usuario y comentario 
                 foreignKey:"idUsuario"
                 });}
 
         Usuario.associate = function (models){ 
             Usuario.belongsToMany(models.Usuario, {
-                as:"usuario_usuario", 
+                as:"usuarioUsuario", 
 
                 through: "seguidores", 
 

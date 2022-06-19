@@ -17,14 +17,14 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%= usuario.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+				<img src="<%= user.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 
 					
 					<h1 class="main-title">
-						<%= usuario.usuario%> 
+						<%= user.usuario%> 
 					
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
 						<a href="/user/profile/edit"> 
@@ -36,12 +36,12 @@
 					
 				</div>
 
-			 <h4 class="datos-profile"><%= usuario.email%> </h4> 
+			 <h4 class="datos-profile"><%= user.email%> </h4> 
 				<div class="datos-profile">
 					<ul class="">
 						
-						<li><%= usuario.seguidores%> seguidores </li>
-						<li><%= usuario.comentarios%> comentarios </li>
+						<li><%= user.seguidores%> seguidores </li>
+						<li><%= user.comentarios%> comentarios </li>
 					</ul>
 				</div>
 			</div>
@@ -59,25 +59,25 @@
 
 			<!-- Show mis productos -->
 
-			<% for (let i=0; i<dataProducto.length; i++) { %> 
+			<% for(let i = 0; i<4; i++){ %>
 				
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a class="hipervinculo" href="/product">
 						<figure class="product-box_image">
-							<img src= "<%= dataProducto[i].imagen %>" alt="producto">
+							<img src= "<%= //usuario.productoUsuario[i]imagen%>" alt="producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= dataProducto[i].nombre %> </h2>
-							<p><%= dataProducto[i].descripcion %></p>
-							<p><%= dataProducto[i].fechaDeCarga %></p>
+							<h2><%=//usuario.productoUsuario[i].nombre%> </h2>
+							<p><%= //usuario.productoUsuario[i].descripcion %></p>
+							<p><%= //usuario.productoUsuario[i].createdAt %></p>
 						</article>
 					</a>
 				</section>
 			</div>
 
 			<% }  %> 
-
+	
 		</div>
 	</div>
 	<!-- /Mis productos -->
