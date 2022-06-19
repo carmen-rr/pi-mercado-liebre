@@ -54,12 +54,11 @@ const productController = {
         errors.message = 'Nombre puede estar vacio';
         res.locals.errors = errors;
         return res.render('product-add');
-       }
-       if(req.body.descripcion == ''){ 
+       } else if(req.body.descripcion == ''){ 
         errors.message = 'Descripcion puede estar vacio';
         res.locals.errors = errors;
         return res.render('product-add');
-       }
+       }else{
        
        
        let crearProducto =  {
@@ -76,6 +75,7 @@ const productController = {
         return res.redirect("/")
        })
       
+    }
     },
     //Evaluamos que el usaurio este en sesion para poder acceder.
     
