@@ -115,9 +115,9 @@ const indexController = {
         errors.message = 'Password no puede estar vacio';  
         res.locals.errors = errors;
         return res.render('register')
-      }else if (req.body.contrasena.length < 3) { //contraseña no puede tener menos de 3 caracteres
-        errors.message = 'La contraseña no puede tener menos de 3 caracteres';  
-        res.locals.errors = errors;
+     // }else if (req.body.contrasena.length <3) { //contraseña no puede tener menos de 3 caracteres
+     //   errors.message = 'La contraseña no puede tener menos de 3 caracteres';  
+     //   res.locals.errors = errors;
         return res.render('register')
       }else if(req.body.email == ''){     //si el mail esta vacio devolve este mensaje
         errors.message = 'eamil no puede estar vacio';
