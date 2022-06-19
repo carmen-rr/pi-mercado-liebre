@@ -105,29 +105,35 @@ const indexController = {
       let info = req.body; //guardando los datos del forms
       let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
 
-      //Validacion de formularios de Register
+      //Validacion de formularios de Register. Min 39 clase Brian
       let errors ={}; 
-      if(req.body.usuario == ''){ 
+      if(req.body.usuario == ''){   //si el ususario esta vacio, entonces devolve este mensaje
         errors.message = 'Username no puede estar vacio';
         res.locals.errors = errors;
-        return res.render('register');
-      }else if(req.body.contrasenia == ''){ 
-        errors.message = 'Password no puede estar vacio';
+        return res.render('register'); 
+      }else if(req.body.contrasenia == ''){ //si el password esta vacio devolve este mensaje
+        errors.message = 'Password no puede estar vacio';  
         res.locals.errors = errors;
         return res.render('register')
-      }else if(req.body.email == ''){ 
+      }else if (req.body.contrasena.length < 3) { //contraseña no puede tener menos de 3 caracteres
+        errors.message = 'La contraseña no puede tener menos de 3 caracteres';  
+        res.locals.errors = errors;
+        return res.render('register')
+      }else if(req.body.email == ''){     //si el mail esta vacio devolve este mensaje
         errors.message = 'eamil no puede estar vacio';
         res.locals.errors = errors;
         return res.render('register')
-      }else if(req.body.fechaDeNacimiento == ''){ 
+      }else if(req.body.fechaDeNacimiento == ''){   //si la fecha esta vacia devolve este mensaje
         errors.message = 'Fecha de Nacimiento no puede estar vacio';
         res.locals.errors = errors;
         return res.render('register')
-      }else if(req.body.dni == ''){
+      }else if(req.body.dni == ''){ //si el deni esta vacio devolve este mensaje
         errors.message = 'dni estar vacio';
         res.locals.errors = errors;
         return res.render('register')
-      }else{                          //ACA SE ABRE EL ELSE ENROME!!!
+      }else{                          
+        
+      //Si todo lo se arriba esta bien, entonces ejecuta esto. Minuto 33 clase Validacion Brian
 
       //Hay que hacer que se agrgue una imagen sola
       
@@ -146,9 +152,7 @@ const indexController = {
         //remeber_token: 
 
       }
-      
-
-        
+    
       
       //console.log(usuarioCreado);
       usuario.create(
@@ -159,7 +163,7 @@ const indexController = {
         return res.redirect("/user/profile")
       })//.catch(err =>{console.log(err)})
 
-      } //ACA CIERRA EL ELSE ENORME!!!
+      }
 
       },
       logOut:  function (req,res){

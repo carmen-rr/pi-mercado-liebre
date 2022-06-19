@@ -6,6 +6,7 @@ const op = data.Sequelize.Op;
 
 
 const usuario = data.Usuario; 
+
 const productos = data.Producto;
 
 const userController = { 
@@ -13,7 +14,7 @@ const userController = {
     //RUTA DE PROFILE 
     profile: function(req,res){
       if (req.session.user != undefined) {
-        return res.render('product-add')
+        return res.render('profile')
     } else {
         return res.render('login')
     }         
