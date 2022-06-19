@@ -104,7 +104,36 @@ const indexController = {
       
       let info = req.body; //guardando los datos del forms
       let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
-      let usuarioCreado = { //creando el usuario
+
+      //Validacion de formularios de Register
+      let errors ={}; 
+      if(req.body.usuario == ''){ 
+        errors.message = 'Username no puede estar vacio';
+        res.locals.errors = errors;
+        return res.render('register');
+      }else if(req.body.contrasenia == ''){ 
+        errors.message = 'Password no puede estar vacio';
+        res.locals.errors = errors;
+        return res.render('register')
+      }else if(req.body.email == ''){ 
+        errors.message = 'eamil no puede estar vacio';
+        res.locals.errors = errors;
+        return res.render('register')
+      }else if(req.body.fechaDeNacimiento == ''){ 
+        errors.message = 'Fecha de Nacimiento no puede estar vacio';
+        res.locals.errors = errors;
+        return res.render('register')
+      }else if(req.body.dni == ''){
+        errors.message = 'dni estar vacio';
+        res.locals.errors = errors;
+        return res.render('register')
+      }else{                          //ACA SE ABRE EL ELSE ENROME!!!
+
+      //Hay que hacer que se agrgue una imagen sola
+      
+       //Creando el usuario
+
+      let usuarioCreado = {
         usuario : info.usuario,
         contrasenia: passEncriptada,
         email: info.email,
@@ -118,21 +147,19 @@ const indexController = {
 
       }
       
-      //Validacion de formularios con el campo email de Register
-       let errors ={}; 
-        if(req.body.email == ''){ //chequa que el mail no este vacio
-          errors.message = 'Email no puede estar vacio';
-          res.locals.errors = errors;
-          return res.render('register');
-          }
-      
 
+        
+      
+      //console.log(usuarioCreado);
       usuario.create(
         usuarioCreado
       )
+      
       .then((result) =>{
         return res.redirect("/user/profile")
       })//.catch(err =>{console.log(err)})
+
+      } //ACA CIERRA EL ELSE ENORME!!!
 
       },
       logOut:  function (req,res){
