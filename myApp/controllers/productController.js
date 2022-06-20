@@ -78,6 +78,10 @@ const productController = {
     //Evaluamos que el usaurio este en sesion para poder acceder.
 
     edit : ( req,res ) => {
+       
+        if (req.session.user != undefined) {
+        
+        
         let id = req.params.id; 
       
         productos.findByPk(id)
@@ -97,7 +101,10 @@ const productController = {
 
             }
         )
-
+        
+    } else {
+        return res.render('login')
+    }
     },
 
     update: ( req,res ) => {
