@@ -61,9 +61,7 @@ const userController = {
         fotoDePerfil: result.fotoDePerfil,
         id: id,
 
-      }
-      
-      
+      }     
       return res.render('profile-edit', {usuarioEdit:usuarioEdit})
 
 
@@ -73,7 +71,28 @@ const userController = {
     },  
     profileUpdate:  function (req,res) {
       let usuarioUpdate = req.body
-      res.send(usuarioUpdate);
+      let idUpdate = req.params.id
+      let imagenUpdateada = req.file.filename
+
+      usuario.update(
+        {
+        usuario : usuarioUpdate.usuario,
+        contrasenia: usuarioUpdate.contrasenia,
+        email: usuarioUpdate.email,
+        fechaDeNacimiento: usuarioUpdate.fechaDeNacimiento,
+        dni: usuarioUpdate.dni,
+        fotoDePerfil: usuarioUpdate.imagenUpdateada,
+        },
+        {
+          where:[
+              { id: idUpdate }
+          ]
+      }
+      .then((result) => {
+        return res.redirect('/user/profile/'+ id)
+    })
+      )
+
     }
 
 
