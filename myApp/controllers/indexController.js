@@ -59,6 +59,7 @@ const indexController = {
 
       },
       loginStore:  function (req,res){
+       
        let info = req.body;
        usuario.findOne({
         where : [{ email : info.email }]
@@ -77,8 +78,8 @@ const indexController = {
               if (req.body.remember != undefined) {
                 res.cookie('idUser', req.session.user.id, { maxAge: 1000 * 60 * 5 }); //quiero almacenar el id del usuario
                 }
-
-              return res.redirect("/user/profile")
+              let id = req.session.user.id
+              return res.redirect("/")
 
             } else {
               return res.send ("Existe el mail " + result.email + " pero la clave es incorrecta")

@@ -1,5 +1,6 @@
 const db = require("../db/data");
 const data = require("../database/models");
+const { comentarios } = require("../db/data");
 const op = data.Sequelize.Op;
 //const bcryptjs = require ('bcryptjs')
 
@@ -13,12 +14,32 @@ const userController = {
 
     //RUTA DE PROFILE 
     profile: function(req,res){
-      if (req.session.user != undefined) {
-        return res.render('profile')
-    } else {
-        return res.render('login')
 
-    }   
+     // if (req.session.user != undefined) {
+
+      let id = req.params.id
+      usuario.findByPk(id)
+      .then(
+        (result)=>{
+          let usuarioPerfil = {
+            usuario : result.usuario,
+            contrasenia: result.contrasenia,
+            email: result.email,
+            dni: result.dni,
+            fotoDePerfil: result.fotoDePerfil,
+            id: id,
+            //seguidores: result.seguidores,
+            //comentarios: comentarios,
+
+          }
+         //res.send(usuarioPerfil)
+         return res.render('profile', {perfil:usuarioPerfil})
+          console.log(usuarioPerfil);
+        }       
+      )
+   // }else{
+   //   return res.render('login')
+   // }
 
         
       }, 
