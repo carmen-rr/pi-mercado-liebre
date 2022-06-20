@@ -14,9 +14,7 @@ const productController = {
         let idProducto = req.params.id;
         console.log(idProducto)
        productos.findByPk(idProducto)
-       .then(result => res.render('product', {
-           producto: result
-       }))
+       .then(result => res.render('product', { producto: result }))
       
        /* 
         {association: 'comentario_producto', include: [{association:'usuario'}]}
@@ -80,13 +78,48 @@ const productController = {
     //Evaluamos que el usaurio este en sesion para poder acceder.
 
     edit : ( req,res ) => {
-        let id = req.params.id;
-        res.render('product-edit')
+        let id = req.params.id; 
+      
+        productos.findByPk(id)
+        .then(
+            (result)=> { 
+
+            let product = {
+                imagen: result.imagen,
+                nombre: result.nombre,
+                descripcion: result.descripcion, 
+                //idUsuario :  1,  req.session.user.id
+                updateAt : new Date() , 
+                id:id           
+            } 
+
+            return res.render('product-edit', {productos : product})
+
+            }
+        )
 
     },
 
     update: ( req,res ) => {
-        
+        let resultUpdate = req.body 
+        let idUpdate  = req.params.id; // este es el id que me llego por parametro
+        let imagen = req.file.filename;
+
+        productos.update(
+            {   imagen:resultUpdate.imagen,
+                nombre: resultUpdate.nombre,
+                descripcion: resultUpdate.descripcion,
+                updateAt : new Date ()  
+            },
+            {
+                where:[
+                    { id: idUpdate }
+                ]
+            }
+        )
+        .then((result) => {
+            return res.redirect('/')
+        })
 
     },
     

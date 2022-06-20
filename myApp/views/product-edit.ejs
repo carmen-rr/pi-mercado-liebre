@@ -21,7 +21,7 @@
 			
 			<!-- Show the "ultimos" products -->
 
-			<form class = "form" action="/product/edit" method="post" enctype="multipart/form-data">
+			<form class = "form" action="/product/edit/<%= productos.id %>" method="post" enctype="multipart/form-data">
 				<div class="login">
 					<div class="login-screen">
 						<div class="app-title">
@@ -34,24 +34,24 @@
 			
 						<div class="login-form">
 							<div class="control-group">
-							<input type="file" name="imagenProducto" class="login-field" value="" placeholder="Imagen" id="login-name">
+							<input type="file" name="imagenProducto" class="login-field" value="<%=productos.imagen %>" placeholder="Imagen" id="login-name">
 							<label class="login-field-icon fui-user" for="login-name"></label>
 							</div>
 			
 							<div class="control-group">
-							<input type="text" name="nombre" class="login-field" value="" placeholder="Nombre del disfraz" id="login-pass">
+							<input type="text" name="nombre" class="login-field" value="<%=productos.nombre %>" placeholder="Nombre del disfraz" id="login-pass">
 							<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 
 							<div class="control-group">
-								<input type="text" name="descripcion" class="login-field" value="" placeholder="Descripcion" id="login-pass">
+								<input type="text" name="descripcion" class="login-field" value="<%=productos.descripcion %>" placeholder="Descripcion" id="login-pass">
 								<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 
-							<!--<div class="control-group">
-								<input type="date" name="fechaDeCarga" class="login-field" value="" placeholder="Fecha de carga" id="login-pass">
+							<div class="control-group">
+								<input type="date" name="fechaDeCarga" class="login-field" value="<%=productos.updatedAt %>" placeholder="Fecha de carga" id="login-pass">
 								<label class="login-field-icon fui-lock" for="login-pass"></label>
-							</div> -->
+							</div>
 
 							<button type="submit">PUBLICAR</button>
 
