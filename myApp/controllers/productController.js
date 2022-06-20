@@ -78,6 +78,17 @@ const productController = {
     }
     },
     //Evaluamos que el usaurio este en sesion para poder acceder.
+
+    edit : ( req,res ) => {
+        let id = req.params.id;
+        res.render('product-edit')
+
+    },
+
+    update: ( req,res ) => {
+        
+
+    },
     
 }
 

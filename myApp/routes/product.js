@@ -28,6 +28,13 @@ router.get('/detalle/:id', productController.producto);
 
 router.get('/add', productController.create);
 
+//FORM DE EDITAR UN PRODUCTO
+router.get('/edit',productController.edit);
+
+/* PROCESA EL FORMULARIO DE EDITAR UN PRODUCTO  */
+router.post('/edit',productController.update);
+
+
 router.post('/add', upload.single('imagenProducto'), productController.store)
 
 module.exports = router; 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%- include('./partials/head')%> 
+
+<body>
+	<!-- Header -->
+
+	<% if (locals.user != undefined) { %>
+			<%- include('./partials/headerLogueado')%> 
+	<% } else { %>
+			<%- include('./partials/headerNot')%> 
+	<% } %> 
+
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row d-flex justify-content-center">
+			
+			<!-- Show the "ultimos" products -->
+
+			<form class = "form" action="/product/edit" method="post" enctype="multipart/form-data">
+				<div class="login">
+					<div class="login-screen">
+						<div class="app-title">
+							<h1 class="forms-h1">Edita tu producto 👹​</h1>
+						</div>
+
+						<% if(locals.errors){ %>
+							<p> <%=errors.message  %> </p>
+						<% } %> 
+			
+						<div class="login-form">
+							<div class="control-group">
+							<input type="file" name="imagenProducto" class="login-field" value="" placeholder="Imagen" id="login-name">
+							<label class="login-field-icon fui-user" for="login-name"></label>
+							</div>
+			
+							<div class="control-group">
+							<input type="text" name="nombre" class="login-field" value="" placeholder="Nombre del disfraz" id="login-pass">
+							<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+
+							<div class="control-group">
+								<input type="text" name="descripcion" class="login-field" value="" placeholder="Descripcion" id="login-pass">
+								<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+
+							<!--<div class="control-group">
+								<input type="date" name="fechaDeCarga" class="login-field" value="" placeholder="Fecha de carga" id="login-pass">
+								<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div> -->
+
+							<button type="submit">PUBLICAR</button>
+
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+		<!-- footer -->
+	
+		<%- include('./partials/footer') %> 
+
+		<!-- /footer -->
+</body>
+
+</html>
