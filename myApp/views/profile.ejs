@@ -17,17 +17,18 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%= user.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= perfil.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 
 					
-					<h1 class="main-title">
-						<%= user.usuario%> 
+					<h1 class="main-title" >
+                        <%= perfil.usuario%>
+						
 					
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
-						<a href="/user/profile/edit/<%= user.id %>"> 
+						<a href="/user/profile/edit/<%= perfil.id %>"> 
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -36,12 +37,12 @@
 					
 				</div>
 
-			 <h4 class="datos-profile"><%= user.email%> </h4> 
+			 <h4 class="datos-profile"><%= perfil.email%> </h4> 
 				<div class="datos-profile">
 					<ul class="">
 						
-						<li><%= user.seguidores%> seguidores </li>
-						<li><%= user.comentarios%> comentarios </li>
+						<li> seguidores </li>
+						<li> comentarios </li>
 					</ul>
 				</div>
 			</div>
