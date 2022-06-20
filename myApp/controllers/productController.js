@@ -110,10 +110,10 @@ const productController = {
     update: ( req,res ) => {
         let resultUpdate = req.body 
         let idUpdate  = req.params.id; // este es el id que me llego por parametro
-        let imagen = req.file.filename;
+        let imagenUpdateada = req.file.filename;
 
         productos.update(
-            {   imagen:resultUpdate.imagen,
+            {   imagen: imagenUpdateada,
                 nombre: resultUpdate.nombre,
                 descripcion: resultUpdate.descripcion,
                 updateAt : new Date ()  
