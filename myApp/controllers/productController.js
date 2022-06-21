@@ -68,7 +68,7 @@ const productController = {
         descripcion: info.descripcion, 
         idUsuario :  req.session.user.id // req.session.user.id   
        }
-
+       //insertando los datos de un producto creado en la tabla de productos
        productos.create(
         crearProducto
        )

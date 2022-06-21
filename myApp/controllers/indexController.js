@@ -54,7 +54,7 @@ const indexController = {
       //RUTA DE LOGIN
       loginCreate:  function (req,res){
         
-        //Hago que no se pueda entrar a profile estando logueado
+        //Hago que no se pueda entrar a login estando logueado
         if (req.session.user != undefined) {
           return res.render('index')
       } else {
@@ -67,7 +67,7 @@ const indexController = {
        
        let info = req.body;
        usuario.findOne({
-        where : [{ email : info.email }]
+        where : [{ email : info.email }] //lo que el usuario pone en el campo de mail
        })
         .then((result) => { //el result es la informacion del usuario de la db (ol con propiedades)
           if (result != null) {
@@ -108,6 +108,7 @@ const indexController = {
     //RUTA DE REGISTER
       registerCreate:  function (req,res){
         return res.render('register')
+
       },
       
       registerStore:  function (req,res){
@@ -178,7 +179,7 @@ const indexController = {
 
           usuario.create(usuarioCreado)
           .then( usuario =>{
-            return res.redirect("/login")
+            return res.redirect("/login") //despues de que te registres, anda a login para ingresar
             //Después de guardar un dato create retorna el dato desde la base y lo pone como parámetro dentro del callback. 
           })
           .catch(err =>{console.log(err)})
