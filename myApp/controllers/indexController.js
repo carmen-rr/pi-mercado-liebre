@@ -56,7 +56,7 @@ const indexController = {
         
         //Hago que no se pueda entrar a login estando logueado
         if (req.session.user != undefined) {
-          return res.render('index')
+          return res.render('user/profile/' + user.id) //te tiene que mandar a tu perfil si ya estas logueado. Es igual para register
       } else {
           return res.render('login')
       }
