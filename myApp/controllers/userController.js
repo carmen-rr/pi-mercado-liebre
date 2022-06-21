@@ -32,7 +32,7 @@ const userController = {
             //comentarios: comentarios,
 
           }
-
+//
           /*if (fotoDePerfil = undefined) {
             fotoDePerfil = '/images/users/default-image.png'
           }else{
