@@ -13,7 +13,13 @@ const productController = {
     producto: (req, res) => {
         let idProducto = req.params.id;
         console.log(idProducto)
-       productos.findByPk(idProducto)
+       productos.findByPk(idProducto, {
+        include:{
+           // all: true,
+           // nested: true
+        }
+    }
+           )
        .then(result => res.render('product', { producto: result }))
       
        /* 

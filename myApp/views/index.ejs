@@ -43,9 +43,11 @@
 								<% } else { %>
 								<p><%- productos[i].updatedAt %></p>
 								<% } %> 
-								<p>
+								<a href="/user/profile/<%= productos[i].usuarioProducto.id %>">
+									<p>
 									Creador: <%= productos[i].usuarioProducto.usuario %>
-								</p>
+									</p>
+								</a>
 							</article>
 						</a>
 					</section>
@@ -78,9 +80,11 @@
 								<% } else { %>
 								<p><%- productos[i].updatedAt %></p>
 								<% } %> 								
-								<p>
+								<a href="/user/profile/<%= productos[i].usuarioProducto.id %>">
+									<p>
 									Creador: <%= productos[i].usuarioProducto.usuario %>
-								</p>
+									</p>
+								</a>
 							</article>
 						</a>
 					</section>
