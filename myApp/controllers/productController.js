@@ -134,6 +134,9 @@ const productController = {
     },
     
     destroy: (req, res) => {
+
+        if (req.session.user != undefined) {
+
         let productoEliminar = req.params.id;
         productos.destroy(  {
 
@@ -143,10 +146,11 @@ const productController = {
         .then((result) => {
             return res.redirect('/')
         })
-
+    
+    } else {
+        return res.render('login')
     }
 }
-
-
+}
 
 module.exports = productController;
