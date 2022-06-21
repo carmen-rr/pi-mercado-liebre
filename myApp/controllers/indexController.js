@@ -138,38 +138,30 @@ const indexController = {
         return res.render('register')
       }else{                          
         
-      //Si todo lo se arriba esta bien, entonces ejecuta esto. Minuto 33 clase Validacion Brian
+          //Si todo lo se arriba esta bien, entonces ejecuta esto. Minuto 33 clase Validacion Brian
 
-      //Hay que hacer que se agrgue una imagen sola
-      
-       //Creando el usuario
+          //Hay que hacer que se agrgue una imagen sola
+          
+          //Creando el usuario
 
-      let usuarioCreado = {
-        usuario : info.usuario,
-        contrasenia: passEncriptada,
-        email: info.email,
-        fechaDeNacimiento: info.fechaDeNacimiento,
-        dni: info.dni,
-        fotoDePerfil: req.file.filename,
-        seguidores: 0, //porque esta comenzando y no hay seguidores
-        comentarios: 0, 
+          let usuarioCreado = {
+            usuario : info.usuario,
+            contrasenia: passEncriptada,
+            email: info.email,
+            fechaDeNacimiento: info.fechaDeNacimiento,
+            dni: info.dni,
+            fotoDePerfil: req.file.filename,
+            seguidores: 0, //porque esta comenzando y no hay seguidores
+            comentarios: 0, 
+          }
         
-        //remeber_token: 
-
-      }
-    
-      
-      //console.log(usuarioCreado);
-      usuario.create(
-        usuarioCreado
-      )
-      
-      .then((result) =>{
-        return res.redirect("/user/profile")
-      })//.catch(err =>{console.log(err)})
-
-      }
-
+          usuario.create(usuarioCreado)
+          .then( usuario =>{
+            return res.redirect("/login")
+            //Después de guardar un dato create retorna el dato desde la base y lo pone como parámetro dentro del callback. 
+          })
+          .catch(err =>{console.log(err)})
+        }
       },
       logOut:  function (req,res){
         req.session.destroy();
