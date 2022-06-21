@@ -18,20 +18,24 @@ const userController = {
      // if (req.session.user != undefined) {
 
       let id = req.params.id
-      usuario.findByPk(id)
+      data.Usuario.findByPk(id, 
+        {include:[
+          {association: 'productoUsuario'}
+        ]})
       .then(
         (result)=>{
-          let usuarioPerfil = {
-            usuario : result.usuario,
-            contrasenia: result.contrasenia,
-            email: result.email,
-            dni: result.dni,
-            fotoDePerfil: result.fotoDePerfil,
-            id: id,
+
+          console.log(result)
+         
+          res.render ('profile', {
+           result : result 
+          })
+
+          res.send(result.usuario.dataValues)
+
             //seguidores: result.seguidores,
             //comentarios: comentarios,
 
-          }
 //
           /*if (fotoDePerfil = undefined) {
             fotoDePerfil = '/images/users/default-image.png'
@@ -40,9 +44,6 @@ const userController = {
           }
           */
 
-         //res.send(usuarioPerfil)
-         return res.render('profile', {perfil:usuarioPerfil})
-          console.log(usuarioPerfil);
         }       
       )
    // }else{

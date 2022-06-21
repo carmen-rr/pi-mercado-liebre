@@ -22,20 +22,20 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/users/<%= perfil.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= result.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 
 					
 					<h1 class="main-title" >
-                        <%= perfil.usuario%>
+                        <%= result.usuario%>
 						
 					
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
 						
-					<% if (user.id == perfil.id){ %> 
- 					<a href="/user/profile/edit/<%= perfil.id %>">  <!-- Si el perfil que veo es igual a el perfil de session -->
+					<% if (locals.user == result.user){ %> 
+ 					<a href="/user/profile/edit/<%= result.id %>">  <!-- Si el perfil que veo es igual a el perfil de session -->
 							<i class="fas fa-cog"></i>				<!-- pone la ruedita -->
 						</a>
 					</h1>
@@ -47,7 +47,7 @@
 					
 				</div>
 
-			 <h4 class="datos-profile"><%= perfil.email%> </h4> 
+			 <h4 class="datos-profile"><%= result.email%> </h4> 
 				<div class="datos-profile">
 					<ul class="">
 						
@@ -72,22 +72,22 @@
 
 			<% for(let i = 0; i<4; i++){ %>
 				
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a class="hipervinculo" href="/product">
-						<figure class="product-box_image">
-							<img src= "<%= //usuario.productoUsuario[i]imagen%>" alt="producto">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=//usuario.productoUsuario[i].nombre%> </h2>
-							<p><%= //usuario.productoUsuario[i].descripcion %></p>
-							<p><%= //usuario.productoUsuario[i].createdAt %></p>
-						</article>
-					</a>
-				</section>
-			</div>
-
-			<% }  %> 
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a class="hipervinculo" href="/product">
+							<figure class="product-box_image">
+								<!--<img src= "<%= //result.productoUsuario[i]imagen%>" alt="producto">-->
+							</figure>
+							<article class="product-box_data">
+								<h2><%=result.productoUsuario[i].nombre%> </h2>
+								<p><%= result.productoUsuario[i].descripcion %></p>
+								<p><%=result.productoUsuario[i].createdAt %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+	
+				<% }  %> 
 	
 		</div>
 	</div>

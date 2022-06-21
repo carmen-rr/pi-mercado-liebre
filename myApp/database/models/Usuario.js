@@ -75,14 +75,14 @@ module.exports = function (sequelize, dataTypes){
                 foreignKey:"idUsuario"
             });
 
-            Usuario.belongsToMany(models.Usuario, {
+           /* Usuario.belongsToMany(models.Usuario, {
                 as:"usuarioUsuario", 
                 through: "seguidores", 
                 foreignKey:"idUsuarioSeguidor", 
                 otherKey: "idUsuarioSeguidor", 
                 timestamps: true,
                 underscored: false, 
-            });
+            });*/
 
             }
 
