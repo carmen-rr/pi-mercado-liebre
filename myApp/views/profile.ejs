@@ -29,20 +29,20 @@
 
 					
 					<h1 class="main-title" >
-                        <%= result.usuario%>
+                        <%=result.usuario%>
 						
 					
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
 						
-					<% if (locals.user == result.user){ %> 
+					<% //if (locals.user == result.user){ %> 
  					<a href="/user/profile/edit/<%= result.id %>">  
 							<i class="fas fa-cog"></i>				
 						</a>
 					</h1>
 					
-					<% }else{ %> 
+					<%//}else{ %> 
 						<a class="btn mt-3 ml-4" href="">SEGUIR</a>	<!-- sino, pone el boton de seguir -->
-					<% } %> 
+					<%// } %> 
 
 					
 				</div>
@@ -70,18 +70,21 @@
 
 			<!-- Show mis productos -->
 
-			<% for(let i = 0; i<4; i++){ %>
+			<% for(let i = 0; i<result.productoUsuario.length; i++){ %>
 				
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a class="hipervinculo" href="/product">
 							<figure class="product-box_image">
-								<!--<img src= "<%= //result.productoUsuario[i]imagen%>" alt="producto">-->
+								<img src= "/images/products/<%=result.productoUsuario[i].imagen%>" alt="producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%=//result.productoUsuario[i].nombre%> </h2>
-								<p><%= //result.productoUsuario[i].descripcion %></p>
-								<p><%=//result.productoUsuario[i].createdAt %></p>
+								
+								<h2><%= result.productoUsuario[i].nombre%> </h2>
+								<p><%= result.productoUsuario[i].descripcion %></p>
+								<p><%= result.productoUsuario[i].createdAt %></p>
+								 
+
 							</article>
 						</a>
 					</section>

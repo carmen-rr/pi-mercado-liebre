@@ -53,13 +53,15 @@ const userController = {
       .then(
         (result)=>{
 
-        console.log(result)
+        //console.log(result)
          
-        // res.render ('profile', {
-         // result : result 
-          //})
+        res.render ('profile', {
+        result : result 
+        })
 
-        
+      
+       //res.send(result.productoUsuario[1]);
+       
 
 
 
