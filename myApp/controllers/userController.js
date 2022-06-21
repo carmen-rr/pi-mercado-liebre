@@ -18,6 +18,34 @@ const userController = {
      // if (req.session.user != undefined) {
 
       let id = req.params.id
+
+
+     /* usuario.findByPk(id)
+      data.Usuario.findByPk(id, 
+        {include:[
+          {association: 'productoUsuario'}
+        ]})
+      .then(
+        (result)=>{
+          let data = {
+            usuario : result.usuario,
+            contrasenia: result.contrasenia,
+            email: result.email,
+            dni: result.dni,
+            fotoDePerfil: result.fotoDePerfil,
+            id: id,
+          }
+
+
+        res.send(result)
+        //return res.render('profile', {result:result})
+
+          }
+      )
+
+      */
+
+      
       data.Usuario.findByPk(id, 
         {include:[
           {association: 'productoUsuario'}
@@ -25,13 +53,19 @@ const userController = {
       .then(
         (result)=>{
 
-          console.log(result)
+        console.log(result)
          
-          res.render ('profile', {
-           result : result 
-          })
+        // res.render ('profile', {
+         // result : result 
+          //})
 
-          res.send(result.usuario.dataValues)
+        
+
+
+
+        }
+        )
+  
 
             //seguidores: result.seguidores,
             //comentarios: comentarios,
@@ -44,8 +78,8 @@ const userController = {
           }
           */
 
-        }       
-      )
+               
+      
    // }else{
    //   return res.render('login')
    // }

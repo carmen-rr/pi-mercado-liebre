@@ -35,8 +35,8 @@
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
 						
 					<% if (locals.user == result.user){ %> 
- 					<a href="/user/profile/edit/<%= result.id %>">  <!-- Si el perfil que veo es igual a el perfil de session -->
-							<i class="fas fa-cog"></i>				<!-- pone la ruedita -->
+ 					<a href="/user/profile/edit/<%= result.id %>">  
+							<i class="fas fa-cog"></i>				
 						</a>
 					</h1>
 					
@@ -79,9 +79,9 @@
 								<!--<img src= "<%= //result.productoUsuario[i]imagen%>" alt="producto">-->
 							</figure>
 							<article class="product-box_data">
-								<h2><%=result.productoUsuario[i].nombre%> </h2>
-								<p><%= result.productoUsuario[i].descripcion %></p>
-								<p><%=result.productoUsuario[i].createdAt %></p>
+								<h2><%=//result.productoUsuario[i].nombre%> </h2>
+								<p><%= //result.productoUsuario[i].descripcion %></p>
+								<p><%=//result.productoUsuario[i].createdAt %></p>
 							</article>
 						</a>
 					</section>
