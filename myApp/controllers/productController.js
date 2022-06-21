@@ -13,13 +13,7 @@ const productController = {
     producto: (req, res) => {
         let idProducto = req.params.id;
         console.log(idProducto)
-       productos.findByPk(idProducto, {
-        include:{
-           // all: true,
-           // nested: true
-        }
-    }
-           )
+       productos.findByPk(idProducto)
        .then(result => res.render('product', { producto: result }))
       
        /* 
@@ -48,7 +42,7 @@ const productController = {
     
     store: (req, res) => {
     
-        let errors ={};
+       let errors = {};
        let info = req.body;
        let imagenNombre = req.file.filename;
        
@@ -62,9 +56,12 @@ const productController = {
         errors.message = 'Descripcion puede estar vacio';
         res.locals.errors = errors;
         return res.render('product-add');
+    //   }else if(imagen = 'filename') {
+    //     errors.message = 'imagen no puede estar vacio';
+    //     res.locals.errors = errors;
+    //    return res.render('product-add')
        }else{
-       
-       
+
        let crearProducto =  {
         imagen: imagenNombre,
         nombre: info.nombre,

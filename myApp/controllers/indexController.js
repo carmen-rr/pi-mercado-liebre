@@ -63,6 +63,7 @@ const indexController = {
 
       },
       loginStore:  function (req,res){
+      let errors = {}
        
        let info = req.body;
        usuario.findOne({
@@ -86,11 +87,15 @@ const indexController = {
               return res.redirect("/")
 
             } else {
-              return res.send ("Existe el mail " + result.email + " pero la clave es incorrecta")
+              errors.message = "Existe el mail " + result.email + " pero la clave es incorrecta"
+              res.locals.errors = errors;
+              res.render('login')
             }
 
           } else {
-            return res.send("No existe este mail " +  info.email);
+            errors.message = "No existe este mail " +  info.email;
+            res.locals.errors = errors;
+            res.render('login')
           }
         })
         .catch(function(error){
@@ -106,12 +111,23 @@ const indexController = {
       },
       
       registerStore:  function (req,res){
-      
       let info = req.body; //guardando los datos del forms
+      let errors ={}; 
+
+      usuario.findOne({
+          where : [{ usuario : info.usuario }]
+         })
+         .then((result) => {
+          if (result = req.body.usuario) {
+            errors.message = 'ese usuario ya esta registrado'
+          }})
+      
+          
+
       let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
 
       //Validacion de formularios de Register. Min 39 clase Brian
-      let errors ={}; 
+
       if(req.body.usuario == ''){   //si el ususario esta vacio, entonces devolve este mensaje
         errors.message = 'Username no puede estar vacio';
         res.locals.errors = errors;
@@ -120,9 +136,9 @@ const indexController = {
         errors.message = 'Password no puede estar vacio';  
         res.locals.errors = errors;
         return res.render('register')
-     // }else if (req.body.contrasena.length <3) { //contraseña no puede tener menos de 3 caracteres
-     //   errors.message = 'La contraseña no puede tener menos de 3 caracteres';  
-     //   res.locals.errors = errors;
+      }else if (req.body.contrasenia.length <3) { //contraseña no puede tener menos de 3 caracteres
+        errors.message = 'La contraseña no puede tener menos de 3 caracteres';  
+        res.locals.errors = errors;
         return res.render('register')
       }else if(req.body.email == ''){     //si el mail esta vacio devolve este mensaje
         errors.message = 'eamil no puede estar vacio';
@@ -134,6 +150,10 @@ const indexController = {
         return res.render('register')
       }else if(req.body.dni == ''){ //si el deni esta vacio devolve este mensaje
         errors.message = 'dni estar vacio';
+        res.locals.errors = errors;
+        return res.render('register')
+      }else if (req.body.fotoDePerfil ='filename') {
+        errors.message = 'imagen no puede estar vacio';
         res.locals.errors = errors;
         return res.render('register')
       }else{                          
@@ -154,7 +174,8 @@ const indexController = {
             seguidores: 0, //porque esta comenzando y no hay seguidores
             comentarios: 0, 
           }
-        
+
+
           usuario.create(usuarioCreado)
           .then( usuario =>{
             return res.redirect("/login")

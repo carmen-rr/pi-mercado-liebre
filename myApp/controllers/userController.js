@@ -32,6 +32,14 @@ const userController = {
             //comentarios: comentarios,
 
           }
+
+          /*if (fotoDePerfil = undefined) {
+            fotoDePerfil = '/images/users/default-image.png'
+          }else{
+            fotoDePerfil = fotoDePerfil
+          }
+          */
+
          //res.send(usuarioPerfil)
          return res.render('profile', {perfil:usuarioPerfil})
           console.log(usuarioPerfil);
