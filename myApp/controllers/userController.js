@@ -56,7 +56,8 @@ const userController = {
         //console.log(result)
          
         res.render ('profile', {
-        result : result 
+        result : result,
+        id: id
         })
 
       

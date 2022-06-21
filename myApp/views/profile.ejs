@@ -34,15 +34,15 @@
 					
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
 						
-					<% //if (locals.user == result.user){ %> 
- 					<a href="/user/profile/edit/<%= result.id %>">  
+					<%// if (session.user.id = result.id){ %> 
+						<a href="/user/profile/edit/<%= result.id %>">  
 							<i class="fas fa-cog"></i>				
 						</a>
 					</h1>
 					
-					<%//}else{ %> 
+					<%// }else{ %> 
 						<a class="btn mt-3 ml-4" href="">SEGUIR</a>	<!-- sino, pone el boton de seguir -->
-					<%// } %> 
+					<% //} %> 
 
 					
 				</div>

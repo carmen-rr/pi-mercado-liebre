@@ -53,10 +53,12 @@ const indexController = {
       },
       //RUTA DE LOGIN
       loginCreate:  function (req,res){
+
+        
         
         //Hago que no se pueda entrar a login estando logueado
         if (req.session.user != undefined) {
-          return res.render('user/profile/' + user.id) //te tiene que mandar a tu perfil si ya estas logueado. Es igual para register
+          return res.send('Usted ya esta logueado') //te tiene que mandar a tu perfil si ya estas logueado. Es igual para register
       } else {
           return res.render('login')
       }
@@ -107,7 +109,11 @@ const indexController = {
 
     //RUTA DE REGISTER
       registerCreate:  function (req,res){
-        return res.render('register')
+        if (req.session.user != undefined) {
+          return res.send('Usted ya esta logueado') //te tiene que mandar a tu perfil si ya estas logueado. Es igual para register
+      } else {
+          return res.render('register')
+      }
 
       },
       
@@ -116,11 +122,13 @@ const indexController = {
       let errors ={}; 
 
       usuario.findOne({
-          where : [{ usuario : info.usuario }]
+          where : [{ email : info.email }]
          })
          .then((result) => {
           if (result = req.body.usuario) {
-            errors.message = 'ese usuario ya esta registrado'
+            errors.message = "Existe el mail " + info.email + " ya estar registrado"
+              res.locals.errors = errors;
+              res.render('register')
           }})
       
           
@@ -153,10 +161,10 @@ const indexController = {
         errors.message = 'dni estar vacio';
         res.locals.errors = errors;
         return res.render('register')
-      }else if (req.body.fotoDePerfil ='filename') {
-        errors.message = 'imagen no puede estar vacio';
-        res.locals.errors = errors;
-        return res.render('register')
+      //}else if (req.body.fotoDePerfil = undefined) {
+        //errors.message = 'imagen no puede estar vacio';
+        //res.locals.errors = errors;
+        //return res.render('register')
       }else{                          
         
           //Si todo lo se arriba esta bien, entonces ejecuta esto. Minuto 33 clase Validacion Brian
