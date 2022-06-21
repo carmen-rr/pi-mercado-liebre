@@ -41,13 +41,14 @@ let config = {
         Comentario.belongsTo(models.Usuario, {
             as:"usuarioComentarios", //la relacion de usuario y comentario 
             foreignKey:"idUsuario"
-        });}
-
-    Comentario.associate = function (models){ 
+        });
+    
         Comentario.belongsTo(models.Producto, {
             as:"productoComentarios", //la relacion de producto y comentarios 
             foreignKey:"idProducto"
-        });}
+        });
+    }
 
+    
     return Comentario; 
 }

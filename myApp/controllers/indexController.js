@@ -13,11 +13,14 @@ const indexController = {
     //INDEX
     index: (req, res) => {
       productos.findAll({
-        order: [[ "createdAt" , "DESC"]]
+        order: [[ "createdAt" , "DESC"]],
+        include:[
+          {association: 'usuarioProducto'}
+        ]
       })
       .then((result) => {
         console.log(result)
-        return res.send(result)
+        //return res.send(result)
         return res.render('index', {productos : result})
       })
       },

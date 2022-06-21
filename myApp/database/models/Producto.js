@@ -49,14 +49,14 @@ module.exports = function (sequelize, dataTypes) {
             as: "usuarioProducto", //la relacion de usuario y producto 
             foreignKey: "idUsuario"
         });
-    }
 
-    Producto.associate = function (models) {
         Producto.hasMany(models.Comentario, {
             as: "comentarioProducto", //la relacion de producto y comentarios 
             foreignKey: "idProducto"
         });
     }
+
+
 
     return Producto;
 }

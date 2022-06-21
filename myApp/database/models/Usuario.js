@@ -68,28 +68,24 @@ module.exports = function (sequelize, dataTypes){
              Usuario.hasMany(models.Producto, {
                  as:"productoUsuario", //la relacion de usuario y producto 
                  foreignKey:"idUsuario"
-             });}
+             });
 
-         Usuario.associate = function (models){ 
             Usuario.hasMany(models.Comentario, {
                 as:"comentariosUsuario", //la relacion de usuario y comentario 
                 foreignKey:"idUsuario"
-                });}
+            });
 
-        Usuario.associate = function (models){ 
             Usuario.belongsToMany(models.Usuario, {
                 as:"usuarioUsuario", 
-
                 through: "seguidores", 
-
                 foreignKey:"idUsuarioSeguidor", 
-
                 otherKey: "idUsuarioSeguidor", 
-
                 timestamps: true,
                 underscored: false, 
             });
-        }
+
+            }
+
 
          return Usuario; 
     }

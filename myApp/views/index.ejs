@@ -38,6 +38,9 @@
 								<a href="/product/detalle/<%= productos[i].id %>"><h2><%= productos[i].nombre %></h2></a> 
 								<p><%= productos[i].descripcion %></p>
 								<p><%= productos[i].updatedAt %></p>
+								<p>
+									Creador: <%= productos[i].usuarioProducto.usuario %>
+								</p>
 							</article>
 						</a>
 					</section>
