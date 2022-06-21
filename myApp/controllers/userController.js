@@ -48,6 +48,10 @@ const userController = {
     profileEdit:  function(req,res){
 
     let id = req.params.id
+    let mensaje = 'Este no es tu usuario'
+
+    if (req.session.user.id == id) {
+
     usuario.findByPk(id)
     .then(
     (result)=>{
@@ -61,12 +65,16 @@ const userController = {
         fotoDePerfil: result.fotoDePerfil,
         id: id,
 
-      }     
+      } 
+
       return res.render('profile-edit', {usuarioEdit:usuarioEdit})
 
-
-
     })
+    }else{
+
+      return res.redirect('/user/profile/'+ id)
+
+    }
 
     },  
     profileUpdate:  function (req,res) {
