@@ -36,6 +36,10 @@ router.get('/edit/:id',productController.edit);
 /* PROCESA EL FORMULARIO DE EDITAR UN PRODUCTO  */
 router.post('/edit/:id',upload.single('editarProducto'), productController.update);
 
+/*ELIMINAR UN PRODUCTO*/
+router.get('/delete/:id', productController.destroy);
+
+
 
 
 

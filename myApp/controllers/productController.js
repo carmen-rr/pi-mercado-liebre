@@ -133,6 +133,18 @@ const productController = {
 
     },
     
+    destroy: (req, res) => {
+        let productoEliminar = req.params.id;
+        productos.destroy(  {
+
+            where:[{ id : productoEliminar}]
+
+        }  )
+        .then((result) => {
+            return res.redirect('/')
+        })
+
+    }
 }
 
 
