@@ -13,19 +13,23 @@ const productController = {
     producto: (req, res) => {
         let idProducto = req.params.id;
         console.log(idProducto)
-       productos.findByPk(idProducto)
-       .then(result => res.render('product', { producto: result }))
-      
-       /* 
-        {association: 'comentario_producto', include: [{association:'usuario'}]}
-        */
        
-       /* res.render('product', {
-            nombreProducto: db.producto[1], 
-            commentProducto: db.comentarios,
-
-        });*/
-    },
+        
+      productos.findByPk(idProducto, {
+        //include: [{
+            //association: "usuarioComentarios",
+            //include: [{
+            //  association: "productoComentarios"
+           // }]
+          //}]
+        })
+       
+        .then((result) => {
+            return res.render("product", {
+              productoResult: result
+            });
+          })
+      },
 
     //RUTA PRODUCT-ADD.
     
