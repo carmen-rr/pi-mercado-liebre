@@ -25,16 +25,16 @@
 			<p class="product-detail-description">
 				<a class="hipervinculo" href="/product/add">¡Hace click para agregar tu disfraz! 😎</a>
 			</p>
-			<% //if (locals.user.id == producto.idUsuario) { %>
+			<% if (locals.user && locals.user.id == producto.idUsuario) { %>
 				<p class="product-detail-description">
 					<a class="hipervinculo" href="/product/edit/<%= producto.id %>">¡Hace click para editar tu disfraz! ​👻​</a>
 				</p>
 				<p class="product-detail-description">
 					<a name = "producto" class="hipervinculo" href="/product/delete/<%= producto.id %>">¡Elimina tu disfraz! ​🗑️ ​​</a>
 				</p>
-			<%// } else { %>
+			<% } else { %>
 				
-			<%// }  %>
+			<% }  %>
 			
 
 		</div>

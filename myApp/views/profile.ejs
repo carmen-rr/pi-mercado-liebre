@@ -34,15 +34,15 @@
 					
  <!--hipervinculo HAY QUE COMPLETAR LA RUTA / dataUsuario[i].id "VER QUE VA EN DATAUSUARIO -->
 						
-					<%// if (session.user.id = result.id){ %> 
+					<% if (locals.user && locals.user.id == result.id){ %> 
 						<a href="/user/profile/edit/<%= result.id %>">  
 							<i class="fas fa-cog"></i>				
 						</a>
 					</h1>
 					
-					<%// }else{ %> 
+					<% }else{ %> 
 						<a class="btn mt-3 ml-4" href="">SEGUIR</a>	<!-- sino, pone el boton de seguir -->
-					<% //} %> 
+					<% } %> 
 
 					
 				</div>
@@ -51,8 +51,9 @@
 				<div class="datos-profile">
 					<ul class="">
 						
-						<li> seguidores </li>
-						<li> comentarios </li>
+						<li> cantidad de productos: <%= result.cantidadDeProducto%> </li>
+						<li> seguidores: <%= result.seguidores  %></li>
+						<li> comentarios: <%= result.comentarios  %></li>
 					</ul>
 				</div>
 			</div>

@@ -26,6 +26,9 @@ const productController = require('../controllers/productController');
 
 router.get('/detalle/:id', productController.producto);
 
+//COMENTARIOS
+router.get('/detalle/:id'), productController.comentario;
+
 router.get('/add', productController.create);
 
 router.post('/add', upload.single('imagenProducto'), productController.store)

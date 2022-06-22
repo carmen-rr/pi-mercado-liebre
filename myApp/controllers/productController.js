@@ -143,6 +143,8 @@ const productController = {
 
     comentario: ( req,res ) => {
 
+        if (req.session.user != undefined) {
+
         let infoComentario = req.body;
 
         let comentario = {
@@ -157,6 +159,9 @@ const productController = {
             return res.redirect ('/product/detalle/' + req.params.id) // req.params.id: le estoy diciendo que me redireccione de nuevo al id del producto que clicke
         })
 
+    }else{
+        res.render('login');
+    }
     
     },
     
