@@ -17,32 +17,6 @@ const userController = {
 
       let id = req.params.id
 
-
-     /* usuario.findByPk(id)
-      data.Usuario.findByPk(id, 
-        {include:[
-          {association: 'productoUsuario'}
-        ]})
-      .then(
-        (result)=>{
-          let data = {
-            usuario : result.usuario,
-            contrasenia: result.contrasenia,
-            email: result.email,
-            dni: result.dni,
-            fotoDePerfil: result.fotoDePerfil,
-            id: id,
-          }
-
-
-        res.send(result)
-        //return res.render('profile', {result:result})
-
-          }
-      )
-
-      */
-
       
       data.Usuario.findByPk(id, 
         {include:[
@@ -56,34 +30,11 @@ const userController = {
         res.render ('profile', {
         result : result,
         id: id
-        })
-
-      
-       //res.send(result.productoUsuario[1]);
-       
-
+        })  
 
 
         }
         )
-  
-
-            //seguidores: result.seguidores,
-            //comentarios: comentarios,
-
-//
-          /*if (fotoDePerfil = undefined) {
-            fotoDePerfil = '/images/users/default-image.png'
-          }else{
-            fotoDePerfil = fotoDePerfil
-          }
-          */
-
-               
-      
-   // }else{
-   //   return res.render('login')
-   // }
 
         
       }, 
@@ -117,7 +68,6 @@ const userController = {
     //}else{
 
    //   return res.redirect('/user/profile/'+ id)
-
   //  }
 
     },  

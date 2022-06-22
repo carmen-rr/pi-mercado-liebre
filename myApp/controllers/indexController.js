@@ -43,8 +43,6 @@ const indexController = {
         }
       })
       .then((result) => {
-       // return res.render('search-results')
-      // return res.send(result)
       console.log(result);
       return res.render('search-results', {
         busqueda : result,
@@ -171,7 +169,7 @@ const indexController = {
         //return res.render('register')
       }else{                          
         
-          //Si todo lo se arriba esta bien, entonces ejecuta esto. Minuto 33 clase Validacion Brian
+          //Si todo lo se arriba esta bien, entonces ejecuta esto.
 
           //Hay que hacer que se agrgue una imagen sola
           
