@@ -51,7 +51,7 @@ module.exports = function (sequelize, dataTypes) {
         });
 
         Producto.hasMany(models.Comentario, {
-            as: "comentarioProducto", //la relacion de producto y comentarios 
+            as: "comentariosProducto", //la relacion de producto y comentarios 
             foreignKey: "idProducto"
         });
     }

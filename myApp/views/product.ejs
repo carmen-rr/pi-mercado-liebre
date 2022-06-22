@@ -46,16 +46,18 @@
 				</article>
 				<div class="col-12 col-lg-4">
 
-				 <% for (let i=0; i<producto.length; i++) { %> 
+				 <% for (let i=0; i<producto.comentariosProducto.length; i++) { %> 
 
 
 					<section class="comments">
 						<article>
-							<img src= <%= commentProducto[i].imagenDePerfil %>   alt="">
+							<img src= '/images/users/<%=producto.comentariosProducto[i].usuarioComentarios.fotoDePerfil %>'   alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a class="" href="/user/profile"> <%= commentProducto[i].nombreDeUsuario %>:</a> </strong>
-								 <%= commentProducto[i].textoDeComentario %> </p>
+								<strong> <a class="" href="/user/profile/<%= producto.comentariosProducto[i].usuarioComentarios.id%>"> 
+								<%= producto.comentariosProducto[i].usuarioComentarios.usuario%>
+								</a> </strong>
+								 <%= producto.comentariosProducto[i].textoDeComentario %> </p>
 							</div>
 						</article>
 					</section>

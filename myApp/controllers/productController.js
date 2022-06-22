@@ -16,20 +16,23 @@ const productController = {
        
         
       productos.findByPk(idProducto, {
-        //include: [{
-            //association: "usuarioComentarios",
-            //include: [{
-            //  association: "productoComentarios"
-           // }]
-          //}]
+        include: [{
+            order: [[ "createdAt" , "DESC"]],
+            association: "comentariosProducto",
+            include: [{
+            association: "usuarioComentarios"
+           }]
+          }]
         })
        
         .then((result) => {
             return res.render("product", {
-              productoResult: result
+            producto: result
             });
+            res.send(result)
           })
       },
+      
 
     //RUTA PRODUCT-ADD.
     
