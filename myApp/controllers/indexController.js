@@ -29,22 +29,26 @@ const indexController = {
       let palabraBuscada = req.query.search;
       console.log(req.query.search)
       console.log(typeof palabraBuscada);
-      let filtro = {
-              where : {
-              [op.or]: [
-                { nombre: { [op.like]: `%${palabraBuscada}%`} },
-                { descripcion: { [op.like]: `%${palabraBuscada}%`} }
-              ]
-            }
-       };
-      productos.findAll(filtro)
+
+      productos.findAll( {
+        include: [
+        {association: "usuarioProducto"},
+        ]
+       , 
+        where : {
+          [op.or]: [
+            { nombre: { [op.like]: `%${palabraBuscada}%`} },
+            { descripcion: { [op.like]: `%${palabraBuscada}%`} }
+          ]
+        }
+      })
       .then((result) => {
        // return res.render('search-results')
       // return res.send(result)
       console.log(result);
       return res.render('search-results', {
         busqueda : result,
-        palabraBuscada : palabraBuscada
+        palabraBuscada : palabraBuscada,
       })
        })
       .catch(function(error) {

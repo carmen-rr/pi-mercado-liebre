@@ -39,12 +39,18 @@
 								<article class="product-box_data">
 									<a href="/product/detalle/<%= busqueda[i].id %>"><h2><%= busqueda[i].nombre %></h2></a> 
 									<p><%= busqueda[i].descripcion %></p>
-									
-									<% if (productos[i].updatedAt == undefined) { %>
-										<p><%- productos[i].createdAt %></p>
+
+									<% if (busqueda[i].updatedAt == undefined) { %>
+										<p><%- busqueda[i].createdAt %></p>
 									<% } else { %>
-									<p><%- productos[i].updatedAt %></p>
-									<% } %> 									
+									<p><%- busqueda[i].updatedAt %></p>
+									<% } %> 
+									
+									<a href="/user/profile/<%= busqueda[i].usuarioProducto.id %>">
+										<p>
+										Creador: <%= busqueda[i].usuarioProducto.usuario %>
+										</p>
+									</a>
 								</article>
 							</a>
 						</section>
