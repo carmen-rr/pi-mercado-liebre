@@ -4,11 +4,9 @@ const { comentarios } = require("../db/data");
 const op = data.Sequelize.Op;
 //const bcryptjs = require ('bcryptjs')
 
-
-
 const usuario = data.Usuario; 
-
 const productos = data.Producto;
+const seguir = data.Seguir;
 
 const userController = { 
 
@@ -149,25 +147,8 @@ const userController = {
     })
       
 
-    }
+    }, 
 
+  }
 
-}; 
-
-
-/* profileEdit:  function(req,res){
-      let id = req.params.id; 
-      usuario.findByPk(id)
-      .then(
-        (result)=>{
-          return res.render('profile-edit', {
-
-            dataUsuario: result, 
-           
-           })
-        }
-      )
-      }, 
-}; */ 
-
-module.exports = userController; 
+module.exports = userController;

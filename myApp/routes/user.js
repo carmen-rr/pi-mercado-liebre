@@ -28,6 +28,4 @@ router.get('/profile/:id', userController.profile);
 router.get('/profile/edit/:id', userController.profileEdit); 
 router.post('/profile/edit/:id', upload.single('fotoDePerfil'), userController.profileUpdate); 
 
-
-
 module.exports = router;
