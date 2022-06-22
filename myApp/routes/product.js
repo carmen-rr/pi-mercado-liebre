@@ -39,6 +39,9 @@ router.post('/edit/:id',upload.single('editarProducto'), productController.updat
 /*ELIMINAR UN PRODUCTO*/
 router.get('/delete/:id', productController.destroy);
 
+/*MOSTRAR COMENTARIO*/
+router.post('/detalle/:id', productController.comentario)
+
 
 
 

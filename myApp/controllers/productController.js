@@ -132,6 +132,25 @@ const productController = {
         })
 
     },
+
+    comentario: ( req,res ) => {
+
+        let infoComentario = req.body;
+
+        let comentario = {
+            textoDeComentario : infoComentario.texto,
+            idUsuario : req.session.user.id, // id del usuario logueado
+            idProducto : req.params.id //trae el id de la ruta del producto 
+
+        }
+
+        comentarios.create(comentario)
+        .then((result) => {
+            return res.redirect ('/product/detalle/' + req.params.id) // req.params.id: le estoy diciendo que me redireccione de nuevo al id del producto que clicke
+        })
+
+    
+    },
     
     destroy: (req, res) => {
 

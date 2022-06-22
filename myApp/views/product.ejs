@@ -63,9 +63,9 @@
 				<% }  %> 
 
 
-					<form class="form" action="/product" method="POST">
+					<form class="form" action="/product/detalle/<%= producto.id %>" method="POST">
 						<!-- <a class="hipervinculo" href="/product"></a> -->
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<input class="form-input" name = "texto" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="btn" >PUBLICAR</button>
 						</a>
 					</form>
