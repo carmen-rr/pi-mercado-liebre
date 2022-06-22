@@ -16,7 +16,7 @@
 	<!-- /Header -->
 
 	<!-- Novedades -->
-			<form action="">
+			<form action="/user/profile/edit/<%= usuarioEdit.id %>" method="post" enctype="multipart/form-data">
 				<div class="login">
 					<div class="login-screen">
 						<div class="app-title">
@@ -50,11 +50,12 @@
 							</div>
 
 							<div class="control-group">
-								<input type="file" class="login-field" value="<%= usuarioEdit.fotoDePerfil %>" placeholder="Foto" id="login-pass">
+								<input name='fotoDePerfil' type="file" class="login-field" value="<%= usuarioEdit.fotoDePerfil %>" placeholder="Foto" id="login-pass">
 								<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 			
-							<a class="btn btn-primary btn-large btn-block" href="/user/profile">COMENCEMOS</a>
+							<!--<a class="btn btn-primary btn-large btn-block" type="submit">COMENCEMOS</a> -->
+							<button type="submit">EDITAR</button>
 
 						</div>
 					</div>

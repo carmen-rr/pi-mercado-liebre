@@ -122,14 +122,14 @@ const indexController = {
       },
       
       registerStore:  function (req,res){
-      let info = req.body; //guardando los datos del forms
+      let info = req.body; 
       let errors ={}; 
 
       usuario.findOne({
           where : [{ email : info.email }]
          })
          .then((result) => {
-          if (result = req.body.usuario) {
+          if (result != undefined) {
             errors.message = "Existe el mail " + info.email + " ya estar registrado"
               res.locals.errors = errors;
               res.render('register')

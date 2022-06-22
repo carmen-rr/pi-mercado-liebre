@@ -96,17 +96,17 @@ const userController = {
     let id = req.params.id
     let mensaje = 'Este no es tu usuario'
 
-    if (req.session.user.id == id) {
+   // if (req.session.user.id == id) {
 
     usuario.findByPk(id)
     .then(
     (result)=>{
-      let fechaFormateada = new Date(result.fechaDeNacimiento).toISOString().slice(0,10);
+     // let fechaFormateada = new Date(result.fechaDeNacimiento).toISOString().slice(0,10);
       let usuarioEdit = {
         usuario : result.usuario,
         contrasenia: result.contrasenia,
         email: result.email,
-        fechaDeNacimiento: fechaFormateada,
+        //fechaDeNacimiento: fechaFormateada,
         dni: result.dni,
         fotoDePerfil: result.fotoDePerfil,
         id: id,
@@ -116,14 +116,14 @@ const userController = {
       return res.render('profile-edit', {usuarioEdit:usuarioEdit})
 
     })
-    }else{
+    //}else{
 
-      return res.redirect('/user/profile/'+ id)
+   //   return res.redirect('/user/profile/'+ id)
 
-    }
+  //  }
 
     },  
-    profileUpdate:  function (req,res) {
+    profileUpdate:(req,res)=> {
       let usuarioUpdate = req.body
       let idUpdate = req.params.id
       let imagenUpdateada = req.file.filename
@@ -133,19 +133,21 @@ const userController = {
         usuario : usuarioUpdate.usuario,
         contrasenia: usuarioUpdate.contrasenia,
         email: usuarioUpdate.email,
-        fechaDeNacimiento: usuarioUpdate.fechaDeNacimiento,
+      //  fechaDeNacimiento: usuarioUpdate.fechaDeNacimiento,
         dni: usuarioUpdate.dni,
-        fotoDePerfil: usuarioUpdate.imagenUpdateada,
+        fotoDePerfil: imagenUpdateada,
+        id: usuarioUpdate.id
         },
         {
           where:[
               { id: idUpdate }
           ]
       }
-      .then((result) => {
-        return res.redirect('/user/profile/'+ id)
-    })
       )
+      .then((result) => {
+        
+    })
+      
 
     }
 
